@@ -1,0 +1,2404 @@
+2026-10-19 13:03:01,997 - INFO - -------------------------------
+2026-10-19 13:03:01,997 - INFO - --------Start logging ---------
+2026-10-19 13:03:01,997 - INFO - -------------------------------
+
+2026-10-19 13:03:01,997 - INFO - Current git hash: b'7072408182ea0e70f53449d76cf6e6f3fc0294a1'
+2026-10-19 13:03:01,997 - INFO - User input (cmd > config > default): 
+Command Line Args:   --config scripts/config/sabater2d.yaml --model_kwargs {"uq_domain": "quad"} --output_folder _experiments/Sabater2d/batch_run_paper_variD --seed 9 --n_doe 40 --n_EI 48 --n_EM 16 --n_TR 16 --tag quad_uq9
+Config File (scripts/config/sabater2d.yaml):
+  n_doe_se:          -1
+  n_doe_ufun:        -1
+  n_EI_se:           -1
+  n_EI_ufun:         -1
+  n_EM_se:           -1
+  n_EM_ufun:         -1
+  n_TR_se:           -1
+  n_TR_ufun:         -1
+  conv_EI:           {"switch": 0, "eps": 0.05, "n_ave": 2}
+  conv_x:            {"switch": 1, "abs_x": 1e-3, "rel_x": 1e-4, "n_ave": 3}
+  conv_y:            {"switch": 1, "abs_y": 1e-3, "rel_y": 1e-4, "n_ave": 3}
+  sim_file:          results/intermediate_sims/15_30_34_Sabater2d_ndoe_8_n_EI_8/ro_data.pkl
+  transfer_learning: 0
+  load_doe:          0
+  continue_doe:      0
+  load_doe_infill:   0
+  catch_up_doe_infill:0
+  continue_doe_infill:0
+  load_EI:           0
+  continue_EI:       0
+  load_EM:           0
+  continue_EM:       0
+  load_TR:           0
+  continue_TR:       0
+  EI_genopt_i:       50
+  EI_genopt_pop:     15
+  EM_genopt_i:       50
+  EM_genopt_pop:     15
+  TR_genopt_i:       50
+  TR_genopt_pop:     15
+  UQ_genopt_i:       50
+  UQ_genopt_pop:     15
+  max_attempts:      5
+  measure:           quantile
+  tau:               0.95
+  alpha:             0.5
+  sampler:           matheron
+  J_device:          cuda
+  n_samp_gp:         5000
+  n_samp_J:          5000
+  n_samp_gp_opt:     2000
+  n_samp_J_opt:      2000
+  n_samp_J_TR_opt:   100000
+  n_rep_J_TR:        2
+  plot_n_samp_J:     2000
+  plot_n_samp_gp:    2000
+  doe_burn_in:       0
+  ref_stat:          quant
+  ref_q:             0.75
+  EI_type:           analytical
+  device:            cpu
+  verbose:           True
+  model:             Sabater2d
+  add_noise:         0.0001
+  plot_n_points:     20
+  plot_n_rep:        1
+Defaults:
+  --n_EX:            0
+
+2026-10-19 13:03:03,322 - INFO - Heuristics: 
+
+2026-10-19 13:03:03,322 - INFO -     n_doe_se = 0
+2026-10-19 13:03:03,322 - INFO -     n_doe_ufun = 0
+2026-10-19 13:03:03,322 - INFO -     n_   EI_se = 1
+2026-10-19 13:03:03,322 - INFO -     n_EI_ufun = 1
+2026-10-19 13:03:03,322 - INFO -     n_EM_se = 1
+2026-10-19 13:03:03,322 - INFO -     n_EM_ufun = 1
+2026-10-19 13:03:03,322 - INFO -     n_TR_se = 1
+2026-10-19 13:03:03,322 - INFO -     n_TR_ufun = 1
+2026-10-19 13:03:03,322 - INFO -     Maximal number of model evals = 200
+2026-10-19 13:03:03,322 - INFO - Initial DOE:
+2026-10-19 13:03:03,714 - DEBUG -      Timing: Hyperpara tuning t = 0.389
+2026-10-19 13:03:05,099 - DEBUG -      Comp matheron path = 0.069 s
+2026-10-19 13:03:05,129 - INFO - Create Initial GP
+2026-10-19 13:03:05,129 - INFO -     Output samples : torch.Size([40, 1])
+2026-10-19 13:03:05,129 - INFO -     Input  samples : torch.Size([40, 4])
+2026-10-19 13:03:05,129 - INFO -     Candidate x = ['2.36', '4.39'] with q = 9.83
+2026-10-19 13:03:05,148 - INFO -     Optimum   x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:03:06,143 - DEBUG -      Comp matheron path = 0.062 s
+2026-10-19 13:03:06,172 - INFO - EI Iteration 1:
+2026-10-19 13:03:06,173 - INFO - EI - Cuda mem:
+2026-10-19 13:03:06,173 - INFO - Allocated: 16.9 MB
+2026-10-19 13:03:06,173 - INFO - Reserved : 1236.0 MB
+2026-10-19 13:03:12,889 - DEBUG -      Timing: EI Opt: t = 6.676 s - 1530 obj fun calls
+2026-10-19 13:03:12,889 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:12,955 - DEBUG -      Comp matheron path = 0.065 s
+2026-10-19 13:03:12,984 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:03:13,031 - DEBUG -      Timing: SE Opt: t = 0.047 s
+2026-10-19 13:03:13,032 - DEBUG -      SE Opt: nit=25, nfev=32, message=Optimization terminated successfully.
+2026-10-19 13:03:13,362 - DEBUG -      Timing: Hyperpara tuning t = 0.328
+2026-10-19 13:03:13,424 - DEBUG -      Comp matheron path = 0.061 s
+2026-10-19 13:03:13,454 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.422 s
+2026-10-19 13:03:13,454 - DEBUG -      J_c_std: 1.573
+2026-10-19 13:03:13,643 - DEBUG -      Timing: UFun Opt: t = 0.190 s
+2026-10-19 13:03:13,643 - DEBUG -      Ufun Opt: nit=50, nfev=159, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:13,953 - DEBUG -      Timing: Hyperpara tuning t = 0.308
+2026-10-19 13:03:14,015 - DEBUG -      Comp matheron path = 0.061 s
+2026-10-19 13:03:14,047 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.403 s
+2026-10-19 13:03:14,047 - DEBUG -      J_c_std: 0.837
+2026-10-19 13:03:14,110 - DEBUG -      Comp matheron path = 0.063 s
+2026-10-19 13:03:15,126 - DEBUG -      Comp matheron path = 0.062 s
+2026-10-19 13:03:15,156 - INFO -     Candidate:    x = ['2.53', '4.31'] with q = 9.76
+2026-10-19 13:03:15,156 - INFO -     Best in Samp: x = ['2.53', '4.31'] with q = 9.76
+2026-10-19 13:03:15,156 - INFO -     Best in Glob: x = ['2.21', '4.02'] with q = 9.54
+2026-10-19 13:03:15,160 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:03:15,160 - DEBUG -    Timing: Total EI iter 8.988 s
+
+2026-10-19 13:03:15,191 - INFO - EI Iteration 2:
+2026-10-19 13:03:15,191 - INFO - EI - Cuda mem:
+2026-10-19 13:03:15,191 - INFO - Allocated: 25.7 MB
+2026-10-19 13:03:15,191 - INFO - Reserved : 1238.0 MB
+2026-10-19 13:03:21,931 - DEBUG -      Timing: EI Opt: t = 6.699 s - 1530 obj fun calls
+2026-10-19 13:03:21,931 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:21,996 - DEBUG -      Comp matheron path = 0.065 s
+2026-10-19 13:03:22,026 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:03:22,065 - DEBUG -      Timing: SE Opt: t = 0.039 s
+2026-10-19 13:03:22,065 - DEBUG -      SE Opt: nit=13, nfev=29, message=Optimization terminated successfully.
+2026-10-19 13:03:22,402 - DEBUG -      Timing: Hyperpara tuning t = 0.334
+2026-10-19 13:03:22,466 - DEBUG -      Comp matheron path = 0.064 s
+2026-10-19 13:03:22,496 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.432 s
+2026-10-19 13:03:22,496 - DEBUG -      J_c_std: 0.956
+2026-10-19 13:03:22,698 - DEBUG -      Timing: UFun Opt: t = 0.201 s
+2026-10-19 13:03:22,698 - DEBUG -      Ufun Opt: nit=50, nfev=174, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:23,043 - DEBUG -      Timing: Hyperpara tuning t = 0.343
+2026-10-19 13:03:23,109 - DEBUG -      Comp matheron path = 0.066 s
+2026-10-19 13:03:23,139 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.441 s
+2026-10-19 13:03:23,139 - DEBUG -      J_c_std: 1.029
+2026-10-19 13:03:23,205 - DEBUG -      Comp matheron path = 0.065 s
+2026-10-19 13:03:24,473 - DEBUG -      Comp matheron path = 0.063 s
+2026-10-19 13:03:24,503 - INFO -     Candidate:    x = ['2.18', '4.07'] with q = 9.38
+2026-10-19 13:03:24,503 - INFO -     Best in Samp: x = ['2.53', '4.31'] with q = 9.10
+2026-10-19 13:03:24,503 - INFO -     Best in Glob: x = ['2.56', '4.28'] with q = 9.09
+2026-10-19 13:03:24,506 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:03:24,507 - DEBUG -    Timing: Total EI iter 18.334 s
+
+2026-10-19 13:03:24,521 - INFO - EI Iteration 3:
+2026-10-19 13:03:24,521 - INFO - EI - Cuda mem:
+2026-10-19 13:03:24,521 - INFO - Allocated: 26.2 MB
+2026-10-19 13:03:24,521 - INFO - Reserved : 1238.0 MB
+2026-10-19 13:03:31,269 - DEBUG -      Timing: EI Opt: t = 6.709 s - 1530 obj fun calls
+2026-10-19 13:03:31,269 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:31,333 - DEBUG -      Comp matheron path = 0.063 s
+2026-10-19 13:03:31,363 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:03:31,403 - DEBUG -      Timing: SE Opt: t = 0.040 s
+2026-10-19 13:03:31,403 - DEBUG -      SE Opt: nit=20, nfev=27, message=Optimization terminated successfully.
+2026-10-19 13:03:31,761 - DEBUG -      Timing: Hyperpara tuning t = 0.356
+2026-10-19 13:03:31,972 - DEBUG -      Comp matheron path = 0.211 s
+2026-10-19 13:03:32,003 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.600 s
+2026-10-19 13:03:32,003 - DEBUG -      J_c_std: 1.028
+2026-10-19 13:03:32,129 - DEBUG -      Timing: UFun Opt: t = 0.126 s
+2026-10-19 13:03:32,129 - DEBUG -      Ufun Opt: nit=50, nfev=99, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:32,416 - DEBUG -      Timing: Hyperpara tuning t = 0.286
+2026-10-19 13:03:32,471 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:03:32,501 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.372 s
+2026-10-19 13:03:32,501 - DEBUG -      J_c_std: 0.852
+2026-10-19 13:03:32,555 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:03:33,683 - DEBUG -      Comp matheron path = 0.052 s
+2026-10-19 13:03:33,713 - INFO -     Candidate:    x = ['2.13', '4.34'] with q = 9.61
+2026-10-19 13:03:33,713 - INFO -     Best in Samp: x = ['2.53', '4.31'] with q = 9.21
+2026-10-19 13:03:33,713 - INFO -     Best in Glob: x = ['2.53', '4.31'] with q = 9.21
+2026-10-19 13:03:33,716 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:03:33,716 - DEBUG -    Timing: Total EI iter 27.543 s
+
+2026-10-19 13:03:33,728 - INFO - EI Iteration 4:
+2026-10-19 13:03:33,728 - INFO - EI - Cuda mem:
+2026-10-19 13:03:33,728 - INFO - Allocated: 25.9 MB
+2026-10-19 13:03:33,728 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:03:40,473 - DEBUG -      Timing: EI Opt: t = 6.706 s - 1530 obj fun calls
+2026-10-19 13:03:40,473 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:40,531 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:03:40,561 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:03:40,597 - DEBUG -      Timing: SE Opt: t = 0.036 s
+2026-10-19 13:03:40,598 - DEBUG -      SE Opt: nit=8, nfev=30, message=Optimization terminated successfully.
+2026-10-19 13:03:40,901 - DEBUG -      Timing: Hyperpara tuning t = 0.301
+2026-10-19 13:03:40,957 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:03:40,988 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.390 s
+2026-10-19 13:03:40,988 - DEBUG -      J_c_std: 0.548
+2026-10-19 13:03:41,107 - DEBUG -      Timing: UFun Opt: t = 0.119 s
+2026-10-19 13:03:41,107 - DEBUG -      Ufun Opt: nit=50, nfev=87, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:41,364 - DEBUG -      Timing: Hyperpara tuning t = 0.255
+2026-10-19 13:03:41,422 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:03:41,453 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.346 s
+2026-10-19 13:03:41,453 - DEBUG -      J_c_std: 0.471
+2026-10-19 13:03:41,513 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:03:43,029 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:03:43,059 - INFO -     Candidate:    x = ['2.60', '4.24'] with q = 9.20
+2026-10-19 13:03:43,059 - INFO -     Best in Samp: x = ['2.60', '4.24'] with q = 9.20
+2026-10-19 13:03:43,059 - INFO -     Best in Glob: x = ['2.60', '4.24'] with q = 9.20
+2026-10-19 13:03:43,063 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:03:43,063 - DEBUG -    Timing: Total EI iter 36.891 s
+
+2026-10-19 13:03:43,077 - INFO - EI Iteration 5:
+2026-10-19 13:03:43,077 - INFO - EI - Cuda mem:
+2026-10-19 13:03:43,078 - INFO - Allocated: 26.3 MB
+2026-10-19 13:03:43,078 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:03:49,822 - DEBUG -      Timing: EI Opt: t = 6.706 s - 1530 obj fun calls
+2026-10-19 13:03:49,823 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:49,884 - DEBUG -      Comp matheron path = 0.061 s
+2026-10-19 13:03:49,914 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:03:49,955 - DEBUG -      Timing: SE Opt: t = 0.041 s
+2026-10-19 13:03:49,955 - DEBUG -      SE Opt: nit=18, nfev=31, message=Optimization terminated successfully.
+2026-10-19 13:03:50,336 - DEBUG -      Timing: Hyperpara tuning t = 0.379
+2026-10-19 13:03:50,397 - DEBUG -      Comp matheron path = 0.061 s
+2026-10-19 13:03:50,428 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.473 s
+2026-10-19 13:03:50,428 - DEBUG -      J_c_std: 0.454
+2026-10-19 13:03:50,567 - DEBUG -      Timing: UFun Opt: t = 0.139 s
+2026-10-19 13:03:50,567 - DEBUG -      Ufun Opt: nit=50, nfev=111, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:50,933 - DEBUG -      Timing: Hyperpara tuning t = 0.363
+2026-10-19 13:03:50,995 - DEBUG -      Comp matheron path = 0.062 s
+2026-10-19 13:03:51,025 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.458 s
+2026-10-19 13:03:51,025 - DEBUG -      J_c_std: 0.445
+2026-10-19 13:03:51,086 - DEBUG -      Comp matheron path = 0.061 s
+2026-10-19 13:03:52,101 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:03:52,132 - INFO -     Candidate:    x = ['2.56', '4.09'] with q = 8.76
+2026-10-19 13:03:52,132 - INFO -     Best in Samp: x = ['2.56', '4.09'] with q = 8.76
+2026-10-19 13:03:52,132 - INFO -     Best in Glob: x = ['2.56', '4.09'] with q = 8.76
+2026-10-19 13:03:52,135 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:03:52,136 - DEBUG -    Timing: Total EI iter 45.963 s
+
+2026-10-19 13:03:52,151 - INFO - EI Iteration 6:
+2026-10-19 13:03:52,152 - INFO - EI - Cuda mem:
+2026-10-19 13:03:52,152 - INFO - Allocated: 26.5 MB
+2026-10-19 13:03:52,152 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:03:58,926 - DEBUG -      Timing: EI Opt: t = 6.736 s - 1530 obj fun calls
+2026-10-19 13:03:58,926 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:03:58,985 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:03:59,015 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:03:59,056 - DEBUG -      Timing: SE Opt: t = 0.041 s
+2026-10-19 13:03:59,056 - DEBUG -      SE Opt: nit=17, nfev=30, message=Optimization terminated successfully.
+2026-10-19 13:03:59,481 - DEBUG -      Timing: Hyperpara tuning t = 0.423
+2026-10-19 13:03:59,540 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:03:59,570 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.514 s
+2026-10-19 13:03:59,570 - DEBUG -      J_c_std: 0.395
+2026-10-19 13:03:59,763 - DEBUG -      Timing: UFun Opt: t = 0.192 s
+2026-10-19 13:03:59,763 - DEBUG -      Ufun Opt: nit=50, nfev=159, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:00,154 - DEBUG -      Timing: Hyperpara tuning t = 0.388
+2026-10-19 13:04:00,213 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:04:00,243 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.480 s
+2026-10-19 13:04:00,244 - DEBUG -      J_c_std: 0.308
+2026-10-19 13:04:00,303 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:04:01,443 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:04:01,473 - INFO -     Candidate:    x = ['2.62', '4.15'] with q = 8.57
+2026-10-19 13:04:01,473 - INFO -     Best in Samp: x = ['2.62', '4.15'] with q = 8.57
+2026-10-19 13:04:01,474 - INFO -     Best in Glob: x = ['2.62', '4.15'] with q = 8.57
+2026-10-19 13:04:01,477 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:04:01,477 - DEBUG -    Timing: Total EI iter 55.305 s
+
+2026-10-19 13:04:01,494 - INFO - EI Iteration 7:
+2026-10-19 13:04:01,494 - INFO - EI - Cuda mem:
+2026-10-19 13:04:01,494 - INFO - Allocated: 26.2 MB
+2026-10-19 13:04:01,494 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:04:08,247 - DEBUG -      Timing: EI Opt: t = 6.713 s - 1530 obj fun calls
+2026-10-19 13:04:08,247 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:08,305 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:04:08,335 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:04:08,388 - DEBUG -      Timing: SE Opt: t = 0.053 s
+2026-10-19 13:04:08,388 - DEBUG -      SE Opt: nit=26, nfev=39, message=Optimization terminated successfully.
+2026-10-19 13:04:08,740 - DEBUG -      Timing: Hyperpara tuning t = 0.350
+2026-10-19 13:04:08,800 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:04:08,831 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.442 s
+2026-10-19 13:04:08,831 - DEBUG -      J_c_std: 0.381
+2026-10-19 13:04:09,044 - DEBUG -      Timing: UFun Opt: t = 0.213 s
+2026-10-19 13:04:09,044 - DEBUG -      Ufun Opt: nit=50, nfev=180, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:09,396 - DEBUG -      Timing: Hyperpara tuning t = 0.351
+2026-10-19 13:04:09,462 - DEBUG -      Comp matheron path = 0.065 s
+2026-10-19 13:04:09,492 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.449 s
+2026-10-19 13:04:09,493 - DEBUG -      J_c_std: 0.351
+2026-10-19 13:04:09,551 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:04:10,946 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:04:10,976 - INFO -     Candidate:    x = ['2.83', '4.04'] with q = 8.27
+2026-10-19 13:04:10,976 - INFO -     Best in Samp: x = ['2.83', '4.04'] with q = 8.27
+2026-10-19 13:04:10,976 - INFO -     Best in Glob: x = ['2.89', '3.88'] with q = 7.80
+2026-10-19 13:04:10,979 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:04:10,979 - DEBUG -    Timing: Total EI iter 64.806 s
+
+2026-10-19 13:04:10,992 - INFO - EI Iteration 8:
+2026-10-19 13:04:10,992 - INFO - EI - Cuda mem:
+2026-10-19 13:04:10,993 - INFO - Allocated: 26.7 MB
+2026-10-19 13:04:10,993 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:04:17,750 - DEBUG -      Timing: EI Opt: t = 6.718 s - 1530 obj fun calls
+2026-10-19 13:04:17,750 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:17,811 - DEBUG -      Comp matheron path = 0.061 s
+2026-10-19 13:04:17,841 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:04:17,893 - DEBUG -      Timing: SE Opt: t = 0.052 s
+2026-10-19 13:04:17,893 - DEBUG -      SE Opt: nit=24, nfev=37, message=Optimization terminated successfully.
+2026-10-19 13:04:18,226 - DEBUG -      Timing: Hyperpara tuning t = 0.331
+2026-10-19 13:04:18,287 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:04:18,317 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.424 s
+2026-10-19 13:04:18,317 - DEBUG -      J_c_std: 0.545
+2026-10-19 13:04:18,512 - DEBUG -      Timing: UFun Opt: t = 0.194 s
+2026-10-19 13:04:18,512 - DEBUG -      Ufun Opt: nit=50, nfev=162, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:18,869 - DEBUG -      Timing: Hyperpara tuning t = 0.355
+2026-10-19 13:04:18,927 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:04:18,958 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.446 s
+2026-10-19 13:04:18,958 - DEBUG -      J_c_std: 0.578
+2026-10-19 13:04:19,019 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:04:20,157 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:04:20,188 - INFO -     Candidate:    x = ['2.88', '3.88'] with q = 8.01
+2026-10-19 13:04:20,188 - INFO -     Best in Samp: x = ['2.88', '3.88'] with q = 8.01
+2026-10-19 13:04:20,188 - INFO -     Best in Glob: x = ['2.88', '3.80'] with q = 7.94
+2026-10-19 13:04:20,191 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:04:20,191 - DEBUG -    Timing: Total EI iter 74.019 s
+
+2026-10-19 13:04:20,205 - INFO - EI Iteration 9:
+2026-10-19 13:04:20,205 - INFO - EI - Cuda mem:
+2026-10-19 13:04:20,206 - INFO - Allocated: 26.8 MB
+2026-10-19 13:04:20,206 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:04:26,985 - DEBUG -      Timing: EI Opt: t = 6.741 s - 1530 obj fun calls
+2026-10-19 13:04:26,985 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:27,042 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:04:27,072 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:04:27,133 - DEBUG -      Timing: SE Opt: t = 0.061 s
+2026-10-19 13:04:27,133 - DEBUG -      SE Opt: nit=36, nfev=43, message=Optimization terminated successfully.
+2026-10-19 13:04:27,527 - DEBUG -      Timing: Hyperpara tuning t = 0.392
+2026-10-19 13:04:27,585 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:04:27,616 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.483 s
+2026-10-19 13:04:27,616 - DEBUG -      J_c_std: 0.642
+2026-10-19 13:04:27,737 - DEBUG -      Timing: UFun Opt: t = 0.120 s
+2026-10-19 13:04:27,737 - DEBUG -      Ufun Opt: nit=50, nfev=93, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:28,142 - DEBUG -      Timing: Hyperpara tuning t = 0.404
+2026-10-19 13:04:28,197 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:04:28,228 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.491 s
+2026-10-19 13:04:28,228 - DEBUG -      J_c_std: 0.866
+2026-10-19 13:04:28,281 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:04:30,318 - DEBUG -      Comp matheron path = 0.061 s
+2026-10-19 13:04:30,349 - INFO -     Candidate:    x = ['3.10', '3.78'] with q = 8.57
+2026-10-19 13:04:30,349 - INFO -     Best in Samp: x = ['2.88', '3.88'] with q = 8.40
+2026-10-19 13:04:30,349 - INFO -     Best in Glob: x = ['2.41', '4.00'] with q = 8.09
+2026-10-19 13:04:30,351 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:04:30,351 - DEBUG -    Timing: Total EI iter 84.178 s
+
+2026-10-19 13:04:30,363 - INFO - EI Iteration 10:
+2026-10-19 13:04:30,363 - INFO - EI - Cuda mem:
+2026-10-19 13:04:30,364 - INFO - Allocated: 26.5 MB
+2026-10-19 13:04:30,364 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:04:37,151 - DEBUG -      Timing: EI Opt: t = 6.748 s - 1530 obj fun calls
+2026-10-19 13:04:37,151 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:37,208 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:04:37,239 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:04:37,298 - DEBUG -      Timing: SE Opt: t = 0.059 s
+2026-10-19 13:04:37,298 - DEBUG -      SE Opt: nit=35, nfev=42, message=Optimization terminated successfully.
+2026-10-19 13:04:37,657 - DEBUG -      Timing: Hyperpara tuning t = 0.357
+2026-10-19 13:04:37,717 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:04:37,748 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.450 s
+2026-10-19 13:04:37,748 - DEBUG -      J_c_std: 0.285
+2026-10-19 13:04:37,935 - DEBUG -      Timing: UFun Opt: t = 0.187 s
+2026-10-19 13:04:37,935 - DEBUG -      Ufun Opt: nit=50, nfev=156, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:38,365 - DEBUG -      Timing: Hyperpara tuning t = 0.428
+2026-10-19 13:04:38,422 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:04:38,453 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.518 s
+2026-10-19 13:04:38,454 - DEBUG -      J_c_std: 0.321
+2026-10-19 13:04:38,509 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:04:40,033 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:04:40,064 - INFO -     Candidate:    x = ['2.56', '3.96'] with q = 7.95
+2026-10-19 13:04:40,064 - INFO -     Best in Samp: x = ['2.56', '3.96'] with q = 7.95
+2026-10-19 13:04:40,064 - INFO -     Best in Glob: x = ['2.56', '3.96'] with q = 7.95
+2026-10-19 13:04:40,066 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:04:40,066 - DEBUG -    Timing: Total EI iter 93.893 s
+
+2026-10-19 13:04:40,080 - INFO - EI Iteration 11:
+2026-10-19 13:04:40,080 - INFO - EI - Cuda mem:
+2026-10-19 13:04:40,081 - INFO - Allocated: 27.0 MB
+2026-10-19 13:04:40,081 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:04:46,877 - DEBUG -      Timing: EI Opt: t = 6.757 s - 1530 obj fun calls
+2026-10-19 13:04:46,877 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:46,933 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:04:46,964 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:04:47,016 - DEBUG -      Timing: SE Opt: t = 0.053 s
+2026-10-19 13:04:47,016 - DEBUG -      SE Opt: nit=29, nfev=36, message=Optimization terminated successfully.
+2026-10-19 13:04:47,411 - DEBUG -      Timing: Hyperpara tuning t = 0.392
+2026-10-19 13:04:47,467 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:04:47,498 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.482 s
+2026-10-19 13:04:47,498 - DEBUG -      J_c_std: 0.405
+2026-10-19 13:04:47,673 - DEBUG -      Timing: UFun Opt: t = 0.175 s
+2026-10-19 13:04:47,674 - DEBUG -      Ufun Opt: nit=50, nfev=144, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:48,054 - DEBUG -      Timing: Hyperpara tuning t = 0.378
+2026-10-19 13:04:48,111 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:04:48,142 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.469 s
+2026-10-19 13:04:48,142 - DEBUG -      J_c_std: 0.080
+2026-10-19 13:04:48,200 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:04:50,103 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:04:50,133 - INFO -     Candidate:    x = ['2.63', '3.93'] with q = 7.90
+2026-10-19 13:04:50,133 - INFO -     Best in Samp: x = ['2.56', '3.96'] with q = 7.85
+2026-10-19 13:04:50,133 - INFO -     Best in Glob: x = ['2.56', '3.96'] with q = 7.85
+2026-10-19 13:04:50,135 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:04:50,135 - DEBUG -    Timing: Total EI iter 103.962 s
+
+2026-10-19 13:04:50,148 - INFO - EI Iteration 12:
+2026-10-19 13:04:50,148 - INFO - EI - Cuda mem:
+2026-10-19 13:04:50,148 - INFO - Allocated: 27.1 MB
+2026-10-19 13:04:50,148 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:04:56,947 - DEBUG -      Timing: EI Opt: t = 6.761 s - 1530 obj fun calls
+2026-10-19 13:04:56,948 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:57,003 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:04:57,033 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:04:57,066 - DEBUG -      Timing: SE Opt: t = 0.033 s
+2026-10-19 13:04:57,066 - DEBUG -      SE Opt: nit=9, nfev=25, message=Optimization terminated successfully.
+2026-10-19 13:04:57,485 - DEBUG -      Timing: Hyperpara tuning t = 0.417
+2026-10-19 13:04:57,539 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:04:57,570 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.504 s
+2026-10-19 13:04:57,570 - DEBUG -      J_c_std: 0.090
+2026-10-19 13:04:57,707 - DEBUG -      Timing: UFun Opt: t = 0.137 s
+2026-10-19 13:04:57,707 - DEBUG -      Ufun Opt: nit=50, nfev=108, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:04:58,116 - DEBUG -      Timing: Hyperpara tuning t = 0.408
+2026-10-19 13:04:58,170 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:04:58,202 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.495 s
+2026-10-19 13:04:58,202 - DEBUG -      J_c_std: 0.063
+2026-10-19 13:04:58,258 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:05:00,544 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:05:00,576 - INFO -     Candidate:    x = ['2.65', '3.94'] with q = 7.89
+2026-10-19 13:05:00,576 - INFO -     Best in Samp: x = ['2.65', '3.94'] with q = 7.89
+2026-10-19 13:05:00,576 - INFO -     Best in Glob: x = ['2.48', '4.04'] with q = 7.76
+2026-10-19 13:05:00,577 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:05:00,577 - DEBUG -    Timing: Total EI iter 114.405 s
+
+2026-10-19 13:05:00,591 - INFO - EI Iteration 13:
+2026-10-19 13:05:00,591 - INFO - EI - Cuda mem:
+2026-10-19 13:05:00,591 - INFO - Allocated: 26.8 MB
+2026-10-19 13:05:00,591 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:05:07,389 - DEBUG -      Timing: EI Opt: t = 6.760 s - 1530 obj fun calls
+2026-10-19 13:05:07,390 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:07,448 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:05:07,479 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:05:07,522 - DEBUG -      Timing: SE Opt: t = 0.043 s
+2026-10-19 13:05:07,522 - DEBUG -      SE Opt: nit=23, nfev=30, message=Optimization terminated successfully.
+2026-10-19 13:05:07,861 - DEBUG -      Timing: Hyperpara tuning t = 0.337
+2026-10-19 13:05:07,921 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:05:07,951 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.429 s
+2026-10-19 13:05:07,951 - DEBUG -      J_c_std: 0.979
+2026-10-19 13:05:08,078 - DEBUG -      Timing: UFun Opt: t = 0.127 s
+2026-10-19 13:05:08,078 - DEBUG -      Ufun Opt: nit=50, nfev=99, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:08,488 - DEBUG -      Timing: Hyperpara tuning t = 0.408
+2026-10-19 13:05:08,547 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:05:08,577 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.499 s
+2026-10-19 13:05:08,577 - DEBUG -      J_c_std: 0.881
+2026-10-19 13:05:08,635 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:05:10,939 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:05:10,970 - INFO -     Candidate:    x = ['4.04', '3.90'] with q = 7.32
+2026-10-19 13:05:10,970 - INFO -     Best in Samp: x = ['4.04', '3.90'] with q = 7.32
+2026-10-19 13:05:10,970 - INFO -     Best in Glob: x = ['4.54', '3.84'] with q = 7.15
+2026-10-19 13:05:10,971 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:05:10,972 - DEBUG -    Timing: Total EI iter 124.799 s
+
+2026-10-19 13:05:10,995 - INFO - EI Iteration 14:
+2026-10-19 13:05:10,995 - INFO - EI - Cuda mem:
+2026-10-19 13:05:10,996 - INFO - Allocated: 27.3 MB
+2026-10-19 13:05:10,996 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:05:17,840 - DEBUG -      Timing: EI Opt: t = 6.806 s - 1530 obj fun calls
+2026-10-19 13:05:17,840 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:17,900 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:05:17,931 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:05:17,983 - DEBUG -      Timing: SE Opt: t = 0.052 s
+2026-10-19 13:05:17,983 - DEBUG -      SE Opt: nit=30, nfev=37, message=Optimization terminated successfully.
+2026-10-19 13:05:18,371 - DEBUG -      Timing: Hyperpara tuning t = 0.386
+2026-10-19 13:05:18,430 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:05:18,461 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.479 s
+2026-10-19 13:05:18,462 - DEBUG -      J_c_std: 0.919
+2026-10-19 13:05:18,578 - DEBUG -      Timing: UFun Opt: t = 0.117 s
+2026-10-19 13:05:18,578 - DEBUG -      Ufun Opt: nit=50, nfev=90, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:18,939 - DEBUG -      Timing: Hyperpara tuning t = 0.359
+2026-10-19 13:05:18,994 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:05:19,026 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.448 s
+2026-10-19 13:05:19,026 - DEBUG -      J_c_std: 0.401
+2026-10-19 13:05:19,080 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:05:22,408 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:05:22,439 - INFO -     Candidate:    x = ['4.44', '3.91'] with q = 7.31
+2026-10-19 13:05:22,439 - INFO -     Best in Samp: x = ['4.44', '3.91'] with q = 7.31
+2026-10-19 13:05:22,440 - INFO -     Best in Glob: x = ['4.44', '3.91'] with q = 7.31
+2026-10-19 13:05:22,442 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:05:22,442 - DEBUG -    Timing: Total EI iter 136.269 s
+
+2026-10-19 13:05:22,459 - INFO - EI Iteration 15:
+2026-10-19 13:05:22,459 - INFO - EI - Cuda mem:
+2026-10-19 13:05:22,459 - INFO - Allocated: 27.4 MB
+2026-10-19 13:05:22,459 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:05:29,303 - DEBUG -      Timing: EI Opt: t = 6.805 s - 1530 obj fun calls
+2026-10-19 13:05:29,303 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:29,364 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:05:29,395 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:05:29,432 - DEBUG -      Timing: SE Opt: t = 0.037 s
+2026-10-19 13:05:29,432 - DEBUG -      SE Opt: nit=14, nfev=27, message=Optimization terminated successfully.
+2026-10-19 13:05:29,812 - DEBUG -      Timing: Hyperpara tuning t = 0.378
+2026-10-19 13:05:29,867 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:05:29,899 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.467 s
+2026-10-19 13:05:29,899 - DEBUG -      J_c_std: 0.670
+2026-10-19 13:05:30,033 - DEBUG -      Timing: UFun Opt: t = 0.134 s
+2026-10-19 13:05:30,033 - DEBUG -      Ufun Opt: nit=50, nfev=105, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:30,380 - DEBUG -      Timing: Hyperpara tuning t = 0.346
+2026-10-19 13:05:30,435 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:05:30,467 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.434 s
+2026-10-19 13:05:30,467 - DEBUG -      J_c_std: 0.482
+2026-10-19 13:05:30,524 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:05:33,090 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:05:33,121 - INFO -     Candidate:    x = ['4.77', '3.89'] with q = 7.24
+2026-10-19 13:05:33,121 - INFO -     Best in Samp: x = ['4.77', '3.89'] with q = 7.24
+2026-10-19 13:05:33,121 - INFO -     Best in Glob: x = ['4.77', '3.89'] with q = 7.24
+2026-10-19 13:05:33,122 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:05:33,122 - DEBUG -    Timing: Total EI iter 146.950 s
+
+2026-10-19 13:05:33,137 - INFO - EI Iteration 16:
+2026-10-19 13:05:33,137 - INFO - EI - Cuda mem:
+2026-10-19 13:05:33,137 - INFO - Allocated: 27.2 MB
+2026-10-19 13:05:33,137 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:05:39,979 - DEBUG -      Timing: EI Opt: t = 6.803 s - 1530 obj fun calls
+2026-10-19 13:05:39,979 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:40,038 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:05:40,069 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:05:40,109 - DEBUG -      Timing: SE Opt: t = 0.040 s
+2026-10-19 13:05:40,109 - DEBUG -      SE Opt: nit=16, nfev=29, message=Optimization terminated successfully.
+2026-10-19 13:05:40,502 - DEBUG -      Timing: Hyperpara tuning t = 0.391
+2026-10-19 13:05:40,557 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:05:40,589 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.480 s
+2026-10-19 13:05:40,589 - DEBUG -      J_c_std: 0.815
+2026-10-19 13:05:40,736 - DEBUG -      Timing: UFun Opt: t = 0.147 s
+2026-10-19 13:05:40,736 - DEBUG -      Ufun Opt: nit=50, nfev=117, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:41,085 - DEBUG -      Timing: Hyperpara tuning t = 0.347
+2026-10-19 13:05:41,138 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:05:41,171 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.435 s
+2026-10-19 13:05:41,171 - DEBUG -      J_c_std: 0.381
+2026-10-19 13:05:41,229 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:05:43,659 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:05:43,691 - INFO -     Candidate:    x = ['4.85', '3.90'] with q = 10.37
+2026-10-19 13:05:43,691 - INFO -     Best in Samp: x = ['4.77', '3.89'] with q = 9.98
+2026-10-19 13:05:43,691 - INFO -     Best in Glob: x = ['3.97', '3.82'] with q = 6.67
+2026-10-19 13:05:43,692 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:05:43,692 - DEBUG -    Timing: Total EI iter 157.520 s
+
+2026-10-19 13:05:43,738 - INFO - EI Iteration 17:
+2026-10-19 13:05:43,738 - INFO - EI - Cuda mem:
+2026-10-19 13:05:43,738 - INFO - Allocated: 27.6 MB
+2026-10-19 13:05:43,738 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:05:50,580 - DEBUG -      Timing: EI Opt: t = 6.804 s - 1530 obj fun calls
+2026-10-19 13:05:50,580 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:50,641 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:05:50,672 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:05:50,710 - DEBUG -      Timing: SE Opt: t = 0.038 s
+2026-10-19 13:05:50,710 - DEBUG -      SE Opt: nit=8, nfev=30, message=Optimization terminated successfully.
+2026-10-19 13:05:51,123 - DEBUG -      Timing: Hyperpara tuning t = 0.411
+2026-10-19 13:05:51,181 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:05:51,212 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.502 s
+2026-10-19 13:05:51,212 - DEBUG -      J_c_std: 0.810
+2026-10-19 13:05:51,385 - DEBUG -      Timing: UFun Opt: t = 0.173 s
+2026-10-19 13:05:51,385 - DEBUG -      Ufun Opt: nit=50, nfev=141, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:05:51,771 - DEBUG -      Timing: Hyperpara tuning t = 0.384
+2026-10-19 13:05:51,828 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:05:51,860 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.474 s
+2026-10-19 13:05:51,860 - DEBUG -      J_c_std: 0.128
+2026-10-19 13:05:51,917 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:05:58,595 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:05:58,626 - INFO -     Candidate:    x = ['3.99', '3.83'] with q = 5.49
+2026-10-19 13:05:58,626 - INFO -     Best in Samp: x = ['3.99', '3.83'] with q = 5.49
+2026-10-19 13:05:58,626 - INFO -     Best in Glob: x = ['3.99', '3.83'] with q = 5.49
+2026-10-19 13:05:58,628 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:05:58,628 - DEBUG -    Timing: Total EI iter 172.456 s
+
+2026-10-19 13:05:58,646 - INFO - EI Iteration 18:
+2026-10-19 13:05:58,646 - INFO - EI - Cuda mem:
+2026-10-19 13:05:58,646 - INFO - Allocated: 27.7 MB
+2026-10-19 13:05:58,646 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:06:05,531 - DEBUG -      Timing: EI Opt: t = 6.845 s - 1530 obj fun calls
+2026-10-19 13:06:05,531 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:06:05,588 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:06:05,620 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:06:05,659 - DEBUG -      Timing: SE Opt: t = 0.039 s
+2026-10-19 13:06:05,659 - DEBUG -      SE Opt: nit=20, nfev=27, message=Optimization terminated successfully.
+2026-10-19 13:06:06,149 - DEBUG -      Timing: Hyperpara tuning t = 0.488
+2026-10-19 13:06:06,206 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:06:06,238 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.579 s
+2026-10-19 13:06:06,238 - DEBUG -      J_c_std: 0.949
+2026-10-19 13:06:06,366 - DEBUG -      Timing: UFun Opt: t = 0.127 s
+2026-10-19 13:06:06,366 - DEBUG -      Ufun Opt: nit=50, nfev=99, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:06:06,891 - DEBUG -      Timing: Hyperpara tuning t = 0.523
+2026-10-19 13:06:06,946 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:06:06,977 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.612 s
+2026-10-19 13:06:06,978 - DEBUG -      J_c_std: 0.666
+2026-10-19 13:06:07,034 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:06:10,631 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:06:10,662 - INFO -     Candidate:    x = ['4.01', '5.72'] with q = 8.16
+2026-10-19 13:06:10,662 - INFO -     Best in Samp: x = ['3.99', '3.83'] with q = 5.67
+2026-10-19 13:06:10,662 - INFO -     Best in Glob: x = ['3.95', '3.78'] with q = 5.61
+2026-10-19 13:06:10,664 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:06:10,664 - DEBUG -    Timing: Total EI iter 184.492 s
+
+2026-10-19 13:06:10,683 - INFO - EI Iteration 19:
+2026-10-19 13:06:10,683 - INFO - EI - Cuda mem:
+2026-10-19 13:06:10,683 - INFO - Allocated: 27.5 MB
+2026-10-19 13:06:10,683 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:06:17,540 - DEBUG -      Timing: EI Opt: t = 6.818 s - 1530 obj fun calls
+2026-10-19 13:06:17,540 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:06:17,593 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:06:17,625 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:06:17,671 - DEBUG -      Timing: SE Opt: t = 0.046 s
+2026-10-19 13:06:17,671 - DEBUG -      SE Opt: nit=18, nfev=34, message=Optimization terminated successfully.
+2026-10-19 13:06:18,013 - DEBUG -      Timing: Hyperpara tuning t = 0.340
+2026-10-19 13:06:18,067 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:06:18,098 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.428 s
+2026-10-19 13:06:18,098 - DEBUG -      J_c_std: 0.148
+2026-10-19 13:06:18,303 - DEBUG -      Timing: UFun Opt: t = 0.204 s
+2026-10-19 13:06:18,303 - DEBUG -      Ufun Opt: nit=50, nfev=171, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:06:18,689 - DEBUG -      Timing: Hyperpara tuning t = 0.384
+2026-10-19 13:06:18,745 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:06:18,777 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.474 s
+2026-10-19 13:06:18,777 - DEBUG -      J_c_std: 0.111
+2026-10-19 13:06:18,833 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:06:23,065 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:06:23,097 - INFO -     Candidate:    x = ['3.94', '3.78'] with q = 5.57
+2026-10-19 13:06:23,097 - INFO -     Best in Samp: x = ['3.94', '3.78'] with q = 5.57
+2026-10-19 13:06:23,097 - INFO -     Best in Glob: x = ['3.93', '3.83'] with q = 5.54
+2026-10-19 13:06:23,100 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:06:23,100 - DEBUG -    Timing: Total EI iter 196.928 s
+
+2026-10-19 13:06:23,123 - INFO - EI Iteration 20:
+2026-10-19 13:06:23,123 - INFO - EI - Cuda mem:
+2026-10-19 13:06:23,123 - INFO - Allocated: 28.0 MB
+2026-10-19 13:06:23,123 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:06:29,983 - DEBUG -      Timing: EI Opt: t = 6.822 s - 1530 obj fun calls
+2026-10-19 13:06:29,983 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:06:30,038 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:06:30,069 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:06:30,113 - DEBUG -      Timing: SE Opt: t = 0.043 s
+2026-10-19 13:06:30,113 - DEBUG -      SE Opt: nit=21, nfev=31, message=Optimization terminated successfully.
+2026-10-19 13:06:30,544 - DEBUG -      Timing: Hyperpara tuning t = 0.429
+2026-10-19 13:06:30,599 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:06:30,631 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.518 s
+2026-10-19 13:06:30,631 - DEBUG -      J_c_std: 0.144
+2026-10-19 13:06:30,844 - DEBUG -      Timing: UFun Opt: t = 0.213 s
+2026-10-19 13:06:30,844 - DEBUG -      Ufun Opt: nit=50, nfev=177, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:06:31,432 - DEBUG -      Timing: Hyperpara tuning t = 0.586
+2026-10-19 13:06:31,488 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:06:31,520 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.676 s
+2026-10-19 13:06:31,520 - DEBUG -      J_c_std: 0.159
+2026-10-19 13:06:31,576 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:06:38,247 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:06:38,279 - INFO -     Candidate:    x = ['3.96', '3.75'] with q = 5.75
+2026-10-19 13:06:38,279 - INFO -     Best in Samp: x = ['3.94', '3.78'] with q = 5.71
+2026-10-19 13:06:38,279 - INFO -     Best in Glob: x = ['3.92', '3.95'] with q = 5.40
+2026-10-19 13:06:38,280 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:06:38,280 - DEBUG -    Timing: Total EI iter 212.107 s
+
+2026-10-19 13:06:38,296 - INFO - EI Iteration 21:
+2026-10-19 13:06:38,297 - INFO - EI - Cuda mem:
+2026-10-19 13:06:38,297 - INFO - Allocated: 28.1 MB
+2026-10-19 13:06:38,297 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:06:45,148 - DEBUG -      Timing: EI Opt: t = 6.812 s - 1530 obj fun calls
+2026-10-19 13:06:45,148 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:06:45,206 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:06:45,238 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:06:45,277 - DEBUG -      Timing: SE Opt: t = 0.039 s
+2026-10-19 13:06:45,277 - DEBUG -      SE Opt: nit=20, nfev=27, message=Optimization terminated successfully.
+2026-10-19 13:06:45,607 - DEBUG -      Timing: Hyperpara tuning t = 0.329
+2026-10-19 13:06:45,664 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:06:45,696 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.419 s
+2026-10-19 13:06:45,696 - DEBUG -      J_c_std: 1.446
+2026-10-19 13:06:45,823 - DEBUG -      Timing: UFun Opt: t = 0.128 s
+2026-10-19 13:06:45,824 - DEBUG -      Ufun Opt: nit=50, nfev=99, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:06:46,244 - DEBUG -      Timing: Hyperpara tuning t = 0.419
+2026-10-19 13:06:46,299 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:06:46,331 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.507 s
+2026-10-19 13:06:46,331 - DEBUG -      J_c_std: 0.273
+2026-10-19 13:06:46,390 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:06:53,092 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:06:53,124 - INFO -     Candidate:    x = ['6.15', '4.38'] with q = 9.93
+2026-10-19 13:06:53,124 - INFO -     Best in Samp: x = ['3.94', '3.78'] with q = 5.65
+2026-10-19 13:06:53,124 - INFO -     Best in Glob: x = ['3.95', '3.91'] with q = 5.32
+2026-10-19 13:06:53,126 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:06:53,126 - DEBUG -    Timing: Total EI iter 226.953 s
+
+2026-10-19 13:06:53,145 - INFO - EI Iteration 22:
+2026-10-19 13:06:53,145 - INFO - EI - Cuda mem:
+2026-10-19 13:06:53,145 - INFO - Allocated: 27.9 MB
+2026-10-19 13:06:53,145 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:07:00,027 - DEBUG -      Timing: EI Opt: t = 6.843 s - 1530 obj fun calls
+2026-10-19 13:07:00,027 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:07:00,082 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:07:00,114 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:07:00,163 - DEBUG -      Timing: SE Opt: t = 0.050 s
+2026-10-19 13:07:00,164 - DEBUG -      SE Opt: nit=23, nfev=36, message=Optimization terminated successfully.
+2026-10-19 13:07:00,524 - DEBUG -      Timing: Hyperpara tuning t = 0.358
+2026-10-19 13:07:00,580 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:07:00,612 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.449 s
+2026-10-19 13:07:00,612 - DEBUG -      J_c_std: 0.174
+2026-10-19 13:07:00,769 - DEBUG -      Timing: UFun Opt: t = 0.157 s
+2026-10-19 13:07:00,769 - DEBUG -      Ufun Opt: nit=50, nfev=126, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:07:01,192 - DEBUG -      Timing: Hyperpara tuning t = 0.421
+2026-10-19 13:07:01,249 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:07:01,282 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.513 s
+2026-10-19 13:07:01,282 - DEBUG -      J_c_std: 0.233
+2026-10-19 13:07:01,336 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:07:08,034 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:07:08,066 - INFO -     Candidate:    x = ['3.88', '3.91'] with q = 5.53
+2026-10-19 13:07:08,066 - INFO -     Best in Samp: x = ['3.88', '3.91'] with q = 5.53
+2026-10-19 13:07:08,066 - INFO -     Best in Glob: x = ['3.91', '3.92'] with q = 5.39
+2026-10-19 13:07:08,069 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:07:08,069 - DEBUG -    Timing: Total EI iter 241.896 s
+
+2026-10-19 13:07:08,086 - INFO - EI Iteration 23:
+2026-10-19 13:07:08,086 - INFO - EI - Cuda mem:
+2026-10-19 13:07:08,086 - INFO - Allocated: 28.3 MB
+2026-10-19 13:07:08,086 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:07:14,966 - DEBUG -      Timing: EI Opt: t = 6.841 s - 1530 obj fun calls
+2026-10-19 13:07:14,966 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:07:15,021 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:07:15,052 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:07:15,124 - DEBUG -      Timing: SE Opt: t = 0.072 s
+2026-10-19 13:07:15,124 - DEBUG -      SE Opt: nit=43, nfev=50, message=Optimization terminated successfully.
+2026-10-19 13:07:15,615 - DEBUG -      Timing: Hyperpara tuning t = 0.489
+2026-10-19 13:07:15,669 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:07:15,701 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.576 s
+2026-10-19 13:07:15,701 - DEBUG -      J_c_std: 0.080
+2026-10-19 13:07:15,908 - DEBUG -      Timing: UFun Opt: t = 0.207 s
+2026-10-19 13:07:15,908 - DEBUG -      Ufun Opt: nit=50, nfev=174, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:07:16,344 - DEBUG -      Timing: Hyperpara tuning t = 0.434
+2026-10-19 13:07:16,404 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:07:16,436 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.528 s
+2026-10-19 13:07:16,437 - DEBUG -      J_c_std: 0.057
+2026-10-19 13:07:16,495 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:07:21,266 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:07:21,298 - INFO -     Candidate:    x = ['3.94', '3.90'] with q = 5.39
+2026-10-19 13:07:21,298 - INFO -     Best in Samp: x = ['3.94', '3.90'] with q = 5.39
+2026-10-19 13:07:21,298 - INFO -     Best in Glob: x = ['3.92', '3.96'] with q = 5.36
+2026-10-19 13:07:21,301 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:07:21,301 - DEBUG -    Timing: Total EI iter 255.128 s
+
+2026-10-19 13:07:21,320 - INFO - EI Iteration 24:
+2026-10-19 13:07:21,320 - INFO - EI - Cuda mem:
+2026-10-19 13:07:21,320 - INFO - Allocated: 28.4 MB
+2026-10-19 13:07:21,320 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:07:28,201 - DEBUG -      Timing: EI Opt: t = 6.841 s - 1530 obj fun calls
+2026-10-19 13:07:28,201 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:07:28,260 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:07:28,292 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:07:28,327 - DEBUG -      Timing: SE Opt: t = 0.036 s
+2026-10-19 13:07:28,327 - DEBUG -      SE Opt: nit=11, nfev=27, message=Optimization terminated successfully.
+2026-10-19 13:07:28,839 - DEBUG -      Timing: Hyperpara tuning t = 0.510
+2026-10-19 13:07:28,894 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:07:28,927 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.599 s
+2026-10-19 13:07:28,927 - DEBUG -      J_c_std: 0.146
+2026-10-19 13:07:29,138 - DEBUG -      Timing: UFun Opt: t = 0.211 s
+2026-10-19 13:07:29,138 - DEBUG -      Ufun Opt: nit=50, nfev=177, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:07:29,530 - DEBUG -      Timing: Hyperpara tuning t = 0.391
+2026-10-19 13:07:29,587 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:07:29,620 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.482 s
+2026-10-19 13:07:29,620 - DEBUG -      J_c_std: 0.073
+2026-10-19 13:07:29,675 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:07:36,371 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:07:36,403 - INFO -     Candidate:    x = ['3.86', '4.03'] with q = 5.41
+2026-10-19 13:07:36,403 - INFO -     Best in Samp: x = ['3.94', '3.90'] with q = 5.37
+2026-10-19 13:07:36,403 - INFO -     Best in Glob: x = ['3.94', '3.90'] with q = 5.37
+2026-10-19 13:07:36,405 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:07:36,405 - DEBUG -    Timing: Total EI iter 270.233 s
+
+2026-10-19 13:07:36,427 - INFO - EI Iteration 25:
+2026-10-19 13:07:36,427 - INFO - EI - Cuda mem:
+2026-10-19 13:07:36,428 - INFO - Allocated: 28.2 MB
+2026-10-19 13:07:36,428 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:07:43,298 - DEBUG -      Timing: EI Opt: t = 6.832 s - 1530 obj fun calls
+2026-10-19 13:07:43,299 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:07:43,359 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:07:43,391 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:07:43,430 - DEBUG -      Timing: SE Opt: t = 0.040 s
+2026-10-19 13:07:43,431 - DEBUG -      SE Opt: nit=11, nfev=30, message=Optimization terminated successfully.
+2026-10-19 13:07:43,987 - DEBUG -      Timing: Hyperpara tuning t = 0.554
+2026-10-19 13:07:44,048 - DEBUG -      Comp matheron path = 0.061 s
+2026-10-19 13:07:44,081 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.650 s
+2026-10-19 13:07:44,081 - DEBUG -      J_c_std: 0.065
+2026-10-19 13:07:44,288 - DEBUG -      Timing: UFun Opt: t = 0.207 s
+2026-10-19 13:07:44,289 - DEBUG -      Ufun Opt: nit=50, nfev=180, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:07:44,691 - DEBUG -      Timing: Hyperpara tuning t = 0.400
+2026-10-19 13:07:44,748 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:07:44,781 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.492 s
+2026-10-19 13:07:44,781 - DEBUG -      J_c_std: 0.037
+2026-10-19 13:07:44,833 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:07:47,409 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:07:47,441 - INFO -     Candidate:    x = ['3.88', '3.94'] with q = 5.31
+2026-10-19 13:07:47,441 - INFO -     Best in Samp: x = ['3.88', '3.94'] with q = 5.31
+2026-10-19 13:07:47,441 - INFO -     Best in Glob: x = ['3.93', '3.98'] with q = 5.20
+2026-10-19 13:07:47,443 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:07:47,443 - DEBUG -    Timing: Total EI iter 281.270 s
+
+2026-10-19 13:07:47,460 - INFO - EI Iteration 26:
+2026-10-19 13:07:47,460 - INFO - EI - Cuda mem:
+2026-10-19 13:07:47,461 - INFO - Allocated: 28.7 MB
+2026-10-19 13:07:47,461 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:07:54,331 - DEBUG -      Timing: EI Opt: t = 6.831 s - 1530 obj fun calls
+2026-10-19 13:07:54,331 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:07:54,384 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:07:54,416 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:07:54,445 - DEBUG -      Timing: SE Opt: t = 0.029 s
+2026-10-19 13:07:54,445 - DEBUG -      SE Opt: nit=13, nfev=20, message=Optimization terminated successfully.
+2026-10-19 13:07:54,913 - DEBUG -      Timing: Hyperpara tuning t = 0.466
+2026-10-19 13:07:54,968 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:07:55,000 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.555 s
+2026-10-19 13:07:55,000 - DEBUG -      J_c_std: 2.770
+2026-10-19 13:07:55,062 - DEBUG -      Timing: UFun Opt: t = 0.061 s
+2026-10-19 13:07:55,062 - DEBUG -      Ufun Opt: nit=35, nfev=42, message=Optimization terminated successfully.
+2026-10-19 13:07:55,555 - DEBUG -      Timing: Hyperpara tuning t = 0.491
+2026-10-19 13:07:55,609 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:07:55,642 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.580 s
+2026-10-19 13:07:55,642 - DEBUG -      J_c_std: 1.916
+2026-10-19 13:07:55,695 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:08:00,353 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:08:00,386 - INFO -     Candidate:    x = ['2.00', '2.00'] with q = 12.01
+2026-10-19 13:08:00,386 - INFO -     Best in Samp: x = ['3.88', '3.94'] with q = 5.39
+2026-10-19 13:08:00,386 - INFO -     Best in Glob: x = ['3.88', '3.94'] with q = 5.39
+2026-10-19 13:08:00,387 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:08:00,387 - DEBUG -    Timing: Total EI iter 294.214 s
+
+2026-10-19 13:08:00,405 - INFO - EI Iteration 27:
+2026-10-19 13:08:00,405 - INFO - EI - Cuda mem:
+2026-10-19 13:08:00,406 - INFO - Allocated: 28.8 MB
+2026-10-19 13:08:00,406 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:08:07,295 - DEBUG -      Timing: EI Opt: t = 6.848 s - 1530 obj fun calls
+2026-10-19 13:08:07,295 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:08:07,353 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:08:07,385 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:08:07,422 - DEBUG -      Timing: SE Opt: t = 0.036 s
+2026-10-19 13:08:07,422 - DEBUG -      SE Opt: nit=18, nfev=25, message=Optimization terminated successfully.
+2026-10-19 13:08:07,886 - DEBUG -      Timing: Hyperpara tuning t = 0.462
+2026-10-19 13:08:07,939 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:08:07,972 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.550 s
+2026-10-19 13:08:07,972 - DEBUG -      J_c_std: 1.325
+2026-10-19 13:08:08,139 - DEBUG -      Timing: UFun Opt: t = 0.166 s
+2026-10-19 13:08:08,139 - DEBUG -      Ufun Opt: nit=50, nfev=135, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:08:08,599 - DEBUG -      Timing: Hyperpara tuning t = 0.458
+2026-10-19 13:08:08,652 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:08:08,685 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.546 s
+2026-10-19 13:08:08,685 - DEBUG -      J_c_std: 0.902
+2026-10-19 13:08:08,738 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:08:12,223 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:08:12,255 - INFO -     Candidate:    x = ['2.01', '3.50'] with q = 9.06
+2026-10-19 13:08:12,255 - INFO -     Best in Samp: x = ['3.88', '3.94'] with q = 5.29
+2026-10-19 13:08:12,255 - INFO -     Best in Glob: x = ['3.88', '3.94'] with q = 5.29
+2026-10-19 13:08:12,257 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:08:12,257 - DEBUG -    Timing: Total EI iter 306.084 s
+
+2026-10-19 13:08:12,275 - INFO - EI Iteration 28:
+2026-10-19 13:08:12,275 - INFO - EI - Cuda mem:
+2026-10-19 13:08:12,275 - INFO - Allocated: 28.6 MB
+2026-10-19 13:08:12,275 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:08:19,167 - DEBUG -      Timing: EI Opt: t = 6.854 s - 1530 obj fun calls
+2026-10-19 13:08:19,167 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:08:19,220 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:08:19,253 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:08:19,295 - DEBUG -      Timing: SE Opt: t = 0.043 s
+2026-10-19 13:08:19,296 - DEBUG -      SE Opt: nit=23, nfev=30, message=Optimization terminated successfully.
+2026-10-19 13:08:19,773 - DEBUG -      Timing: Hyperpara tuning t = 0.476
+2026-10-19 13:08:19,830 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:08:19,863 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.567 s
+2026-10-19 13:08:19,863 - DEBUG -      J_c_std: 1.361
+2026-10-19 13:08:20,023 - DEBUG -      Timing: UFun Opt: t = 0.160 s
+2026-10-19 13:08:20,023 - DEBUG -      Ufun Opt: nit=50, nfev=132, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:08:20,520 - DEBUG -      Timing: Hyperpara tuning t = 0.495
+2026-10-19 13:08:20,575 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:08:20,609 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.586 s
+2026-10-19 13:08:20,609 - DEBUG -      J_c_std: 0.503
+2026-10-19 13:08:20,662 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:08:25,697 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:08:25,730 - INFO -     Candidate:    x = ['3.19', '6.21'] with q = 9.73
+2026-10-19 13:08:25,731 - INFO -     Best in Samp: x = ['3.88', '3.94'] with q = 5.43
+2026-10-19 13:08:25,731 - INFO -     Best in Glob: x = ['3.86', '3.91'] with q = 5.33
+2026-10-19 13:08:25,733 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:08:25,733 - DEBUG -    Timing: Total EI iter 319.560 s
+
+2026-10-19 13:08:25,752 - INFO - EI Iteration 29:
+2026-10-19 13:08:25,752 - INFO - EI - Cuda mem:
+2026-10-19 13:08:25,752 - INFO - Allocated: 29.0 MB
+2026-10-19 13:08:25,752 - INFO - Reserved : 1240.0 MB
+2026-10-19 13:08:32,645 - DEBUG -      Timing: EI Opt: t = 6.855 s - 1530 obj fun calls
+2026-10-19 13:08:32,645 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:08:32,705 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:08:32,739 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:08:32,778 - DEBUG -      Timing: SE Opt: t = 0.040 s
+2026-10-19 13:08:32,778 - DEBUG -      SE Opt: nit=11, nfev=30, message=Optimization terminated successfully.
+2026-10-19 13:08:33,202 - DEBUG -      Timing: Hyperpara tuning t = 0.421
+2026-10-19 13:08:33,262 - DEBUG -      Comp matheron path = 0.060 s
+2026-10-19 13:08:33,295 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.516 s
+2026-10-19 13:08:33,295 - DEBUG -      J_c_std: 0.169
+2026-10-19 13:08:33,459 - DEBUG -      Timing: UFun Opt: t = 0.164 s
+2026-10-19 13:08:33,459 - DEBUG -      Ufun Opt: nit=50, nfev=132, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:08:33,885 - DEBUG -      Timing: Hyperpara tuning t = 0.424
+2026-10-19 13:08:33,945 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:08:33,978 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.519 s
+2026-10-19 13:08:33,978 - DEBUG -      J_c_std: 0.054
+2026-10-19 13:08:34,037 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:08:40,535 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:08:40,568 - INFO -     Candidate:    x = ['3.93', '3.92'] with q = 5.22
+2026-10-19 13:08:40,568 - INFO -     Best in Samp: x = ['3.93', '3.92'] with q = 5.22
+2026-10-19 13:08:40,568 - INFO -     Best in Glob: x = ['3.93', '3.92'] with q = 5.22
+2026-10-19 13:08:40,574 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:08:40,574 - DEBUG -    Timing: Total EI iter 334.402 s
+
+2026-10-19 13:08:40,595 - INFO - EI Iteration 30:
+2026-10-19 13:08:40,595 - INFO - EI - Cuda mem:
+2026-10-19 13:08:40,595 - INFO - Allocated: 29.1 MB
+2026-10-19 13:08:40,595 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:08:47,510 - DEBUG -      Timing: EI Opt: t = 6.876 s - 1530 obj fun calls
+2026-10-19 13:08:47,510 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:08:47,568 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:08:47,601 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:08:47,641 - DEBUG -      Timing: SE Opt: t = 0.040 s
+2026-10-19 13:08:47,641 - DEBUG -      SE Opt: nit=15, nfev=31, message=Optimization terminated successfully.
+2026-10-19 13:08:48,076 - DEBUG -      Timing: Hyperpara tuning t = 0.433
+2026-10-19 13:08:48,129 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:08:48,163 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.521 s
+2026-10-19 13:08:48,163 - DEBUG -      J_c_std: 0.057
+2026-10-19 13:08:48,332 - DEBUG -      Timing: UFun Opt: t = 0.169 s
+2026-10-19 13:08:48,332 - DEBUG -      Ufun Opt: nit=50, nfev=138, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:08:48,851 - DEBUG -      Timing: Hyperpara tuning t = 0.517
+2026-10-19 13:08:48,906 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:08:48,939 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.607 s
+2026-10-19 13:08:48,940 - DEBUG -      J_c_std: 0.044
+2026-10-19 13:08:48,995 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:08:54,576 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:08:54,609 - INFO -     Candidate:    x = ['3.96', '3.97'] with q = 5.27
+2026-10-19 13:08:54,609 - INFO -     Best in Samp: x = ['3.96', '3.97'] with q = 5.27
+2026-10-19 13:08:54,609 - INFO -     Best in Glob: x = ['3.96', '3.97'] with q = 5.27
+2026-10-19 13:08:54,610 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:08:54,610 - DEBUG -    Timing: Total EI iter 348.438 s
+
+2026-10-19 13:08:54,631 - INFO - EI Iteration 31:
+2026-10-19 13:08:54,631 - INFO - EI - Cuda mem:
+2026-10-19 13:08:54,632 - INFO - Allocated: 28.9 MB
+2026-10-19 13:08:54,632 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:09:01,539 - DEBUG -      Timing: EI Opt: t = 6.869 s - 1530 obj fun calls
+2026-10-19 13:09:01,540 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:09:01,595 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:09:01,627 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:09:01,664 - DEBUG -      Timing: SE Opt: t = 0.037 s
+2026-10-19 13:09:01,664 - DEBUG -      SE Opt: nit=18, nfev=25, message=Optimization terminated successfully.
+2026-10-19 13:09:02,125 - DEBUG -      Timing: Hyperpara tuning t = 0.459
+2026-10-19 13:09:02,182 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:09:02,216 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.551 s
+2026-10-19 13:09:02,216 - DEBUG -      J_c_std: 1.047
+2026-10-19 13:09:02,404 - DEBUG -      Timing: UFun Opt: t = 0.188 s
+2026-10-19 13:09:02,404 - DEBUG -      Ufun Opt: nit=50, nfev=156, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:09:02,845 - DEBUG -      Timing: Hyperpara tuning t = 0.439
+2026-10-19 13:09:02,902 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:09:02,935 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.531 s
+2026-10-19 13:09:02,935 - DEBUG -      J_c_std: 0.096
+2026-10-19 13:09:02,994 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:09:06,752 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:09:06,785 - INFO -     Candidate:    x = ['4.86', '6.40'] with q = 14.38
+2026-10-19 13:09:06,785 - INFO -     Best in Samp: x = ['3.96', '3.97'] with q = 5.27
+2026-10-19 13:09:06,785 - INFO -     Best in Glob: x = ['3.95', '3.97'] with q = 5.26
+2026-10-19 13:09:06,786 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:09:06,786 - DEBUG -    Timing: Total EI iter 360.614 s
+
+2026-10-19 13:09:06,805 - INFO - EI Iteration 32:
+2026-10-19 13:09:06,805 - INFO - EI - Cuda mem:
+2026-10-19 13:09:06,805 - INFO - Allocated: 29.4 MB
+2026-10-19 13:09:06,805 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:09:13,720 - DEBUG -      Timing: EI Opt: t = 6.877 s - 1530 obj fun calls
+2026-10-19 13:09:13,720 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:09:13,773 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:09:13,806 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:09:13,868 - DEBUG -      Timing: SE Opt: t = 0.062 s
+2026-10-19 13:09:13,868 - DEBUG -      SE Opt: nit=37, nfev=44, message=Optimization terminated successfully.
+2026-10-19 13:09:14,285 - DEBUG -      Timing: Hyperpara tuning t = 0.415
+2026-10-19 13:09:14,344 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:09:14,377 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.509 s
+2026-10-19 13:09:14,377 - DEBUG -      J_c_std: 0.029
+2026-10-19 13:09:14,527 - DEBUG -      Timing: UFun Opt: t = 0.150 s
+2026-10-19 13:09:14,527 - DEBUG -      Ufun Opt: nit=50, nfev=123, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:09:15,066 - DEBUG -      Timing: Hyperpara tuning t = 0.537
+2026-10-19 13:09:15,122 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:09:15,155 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.628 s
+2026-10-19 13:09:15,155 - DEBUG -      J_c_std: 0.038
+2026-10-19 13:09:15,209 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:09:21,948 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:09:21,981 - INFO -     Candidate:    x = ['3.94', '3.95'] with q = 5.27
+2026-10-19 13:09:21,981 - INFO -     Best in Samp: x = ['3.96', '3.97'] with q = 5.23
+2026-10-19 13:09:21,981 - INFO -     Best in Glob: x = ['3.96', '3.97'] with q = 5.23
+2026-10-19 13:09:21,982 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:09:21,982 - DEBUG -    Timing: Total EI iter 375.810 s
+
+2026-10-19 13:09:22,000 - INFO - EI Iteration 33:
+2026-10-19 13:09:22,000 - INFO - EI - Cuda mem:
+2026-10-19 13:09:22,000 - INFO - Allocated: 29.5 MB
+2026-10-19 13:09:22,000 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:09:28,633 - DEBUG -      Timing: EI Opt: t = 6.595 s - 1470 obj fun calls
+2026-10-19 13:09:28,634 - DEBUG -      EI Opt: nit=48, nfev=1470, message=Optimization terminated successfully.
+2026-10-19 13:09:28,691 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:09:28,724 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:09:28,768 - DEBUG -      Timing: SE Opt: t = 0.044 s
+2026-10-19 13:09:28,768 - DEBUG -      SE Opt: nit=24, nfev=31, message=Optimization terminated successfully.
+2026-10-19 13:09:29,311 - DEBUG -      Timing: Hyperpara tuning t = 0.541
+2026-10-19 13:09:29,366 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:09:29,400 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.632 s
+2026-10-19 13:09:29,400 - DEBUG -      J_c_std: 1.401
+2026-10-19 13:09:29,533 - DEBUG -      Timing: UFun Opt: t = 0.133 s
+2026-10-19 13:09:29,533 - DEBUG -      Ufun Opt: nit=50, nfev=105, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:09:30,094 - DEBUG -      Timing: Hyperpara tuning t = 0.559
+2026-10-19 13:09:30,151 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:09:30,184 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.652 s
+2026-10-19 13:09:30,185 - DEBUG -      J_c_std: 1.807
+2026-10-19 13:09:30,241 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:09:34,926 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:09:34,959 - INFO -     Candidate:    x = ['8.00', '8.00'] with q = 20.56
+2026-10-19 13:09:34,959 - INFO -     Best in Samp: x = ['3.96', '3.97'] with q = 5.24
+2026-10-19 13:09:34,959 - INFO -     Best in Glob: x = ['3.96', '3.97'] with q = 5.24
+2026-10-19 13:09:34,960 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:09:34,960 - DEBUG -    Timing: Total EI iter 388.788 s
+
+2026-10-19 13:09:34,977 - INFO - EI Iteration 34:
+2026-10-19 13:09:34,977 - INFO - EI - Cuda mem:
+2026-10-19 13:09:34,977 - INFO - Allocated: 29.3 MB
+2026-10-19 13:09:34,977 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:09:41,908 - DEBUG -      Timing: EI Opt: t = 6.892 s - 1530 obj fun calls
+2026-10-19 13:09:41,908 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:09:41,966 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:09:41,999 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:09:42,055 - DEBUG -      Timing: SE Opt: t = 0.057 s
+2026-10-19 13:09:42,056 - DEBUG -      SE Opt: nit=32, nfev=39, message=Optimization terminated successfully.
+2026-10-19 13:09:42,504 - DEBUG -      Timing: Hyperpara tuning t = 0.447
+2026-10-19 13:09:42,558 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:09:42,592 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.536 s
+2026-10-19 13:09:42,592 - DEBUG -      J_c_std: 0.054
+2026-10-19 13:09:42,781 - DEBUG -      Timing: UFun Opt: t = 0.189 s
+2026-10-19 13:09:42,781 - DEBUG -      Ufun Opt: nit=50, nfev=156, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:09:43,298 - DEBUG -      Timing: Hyperpara tuning t = 0.515
+2026-10-19 13:09:43,351 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:09:43,385 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.604 s
+2026-10-19 13:09:43,385 - DEBUG -      J_c_std: 0.067
+2026-10-19 13:09:43,438 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:09:47,726 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:09:47,759 - INFO -     Candidate:    x = ['3.94', '3.95'] with q = 5.28
+2026-10-19 13:09:47,759 - INFO -     Best in Samp: x = ['3.96', '3.97'] with q = 5.17
+2026-10-19 13:09:47,759 - INFO -     Best in Glob: x = ['3.96', '3.97'] with q = 5.17
+2026-10-19 13:09:47,763 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:09:47,763 - DEBUG -    Timing: Total EI iter 401.590 s
+
+2026-10-19 13:09:47,783 - INFO - EI Iteration 35:
+2026-10-19 13:09:47,783 - INFO - EI - Cuda mem:
+2026-10-19 13:09:47,784 - INFO - Allocated: 29.8 MB
+2026-10-19 13:09:47,784 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:09:54,706 - DEBUG -      Timing: EI Opt: t = 6.884 s - 1530 obj fun calls
+2026-10-19 13:09:54,707 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:09:54,760 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:09:54,793 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:09:54,838 - DEBUG -      Timing: SE Opt: t = 0.045 s
+2026-10-19 13:09:54,838 - DEBUG -      SE Opt: nit=24, nfev=31, message=Optimization terminated successfully.
+2026-10-19 13:09:55,400 - DEBUG -      Timing: Hyperpara tuning t = 0.560
+2026-10-19 13:09:55,458 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:09:55,492 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.653 s
+2026-10-19 13:09:55,492 - DEBUG -      J_c_std: 1.311
+2026-10-19 13:09:55,625 - DEBUG -      Timing: UFun Opt: t = 0.133 s
+2026-10-19 13:09:55,625 - DEBUG -      Ufun Opt: nit=50, nfev=108, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:09:56,156 - DEBUG -      Timing: Hyperpara tuning t = 0.530
+2026-10-19 13:09:56,213 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:09:56,247 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.622 s
+2026-10-19 13:09:56,247 - DEBUG -      J_c_std: 0.447
+2026-10-19 13:09:56,303 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:09:58,649 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:09:58,683 - INFO -     Candidate:    x = ['3.58', '5.19'] with q = 11.73
+2026-10-19 13:09:58,683 - INFO -     Best in Samp: x = ['3.96', '3.97'] with q = 5.38
+2026-10-19 13:09:58,683 - INFO -     Best in Glob: x = ['3.97', '3.97'] with q = 5.27
+2026-10-19 13:09:58,685 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:09:58,685 - DEBUG -    Timing: Total EI iter 412.512 s
+
+2026-10-19 13:09:58,711 - INFO - EI Iteration 36:
+2026-10-19 13:09:58,711 - INFO - EI - Cuda mem:
+2026-10-19 13:09:58,711 - INFO - Allocated: 29.9 MB
+2026-10-19 13:09:58,711 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:10:05,644 - DEBUG -      Timing: EI Opt: t = 6.894 s - 1530 obj fun calls
+2026-10-19 13:10:05,644 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:10:05,705 - DEBUG -      Comp matheron path = 0.061 s
+2026-10-19 13:10:05,739 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:10:05,777 - DEBUG -      Timing: SE Opt: t = 0.038 s
+2026-10-19 13:10:05,777 - DEBUG -      SE Opt: nit=20, nfev=27, message=Optimization terminated successfully.
+2026-10-19 13:10:06,283 - DEBUG -      Timing: Hyperpara tuning t = 0.505
+2026-10-19 13:10:06,339 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:10:06,373 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.596 s
+2026-10-19 13:10:06,373 - DEBUG -      J_c_std: 1.477
+2026-10-19 13:10:06,579 - DEBUG -      Timing: UFun Opt: t = 0.206 s
+2026-10-19 13:10:06,579 - DEBUG -      Ufun Opt: nit=50, nfev=171, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:10:07,031 - DEBUG -      Timing: Hyperpara tuning t = 0.449
+2026-10-19 13:10:07,089 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:10:07,123 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.543 s
+2026-10-19 13:10:07,123 - DEBUG -      J_c_std: 0.520
+2026-10-19 13:10:07,180 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:10:13,435 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:10:13,469 - INFO -     Candidate:    x = ['2.00', '6.33'] with q = 10.79
+2026-10-19 13:10:13,469 - INFO -     Best in Samp: x = ['3.96', '3.97'] with q = 5.22
+2026-10-19 13:10:13,469 - INFO -     Best in Glob: x = ['3.96', '3.97'] with q = 5.22
+2026-10-19 13:10:13,470 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:10:13,470 - DEBUG -    Timing: Total EI iter 427.298 s
+
+2026-10-19 13:10:13,494 - INFO - EI Iteration 37:
+2026-10-19 13:10:13,494 - INFO - EI - Cuda mem:
+2026-10-19 13:10:13,495 - INFO - Allocated: 29.6 MB
+2026-10-19 13:10:13,495 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:10:20,424 - DEBUG -      Timing: EI Opt: t = 6.889 s - 1530 obj fun calls
+2026-10-19 13:10:20,424 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:10:20,481 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:10:20,514 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:10:20,562 - DEBUG -      Timing: SE Opt: t = 0.048 s
+2026-10-19 13:10:20,563 - DEBUG -      SE Opt: nit=26, nfev=33, message=Optimization terminated successfully.
+2026-10-19 13:10:21,030 - DEBUG -      Timing: Hyperpara tuning t = 0.465
+2026-10-19 13:10:21,083 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:10:21,117 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.554 s
+2026-10-19 13:10:21,117 - DEBUG -      J_c_std: 3.266
+2026-10-19 13:10:21,246 - DEBUG -      Timing: UFun Opt: t = 0.129 s
+2026-10-19 13:10:21,246 - DEBUG -      Ufun Opt: nit=50, nfev=102, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:10:21,690 - DEBUG -      Timing: Hyperpara tuning t = 0.443
+2026-10-19 13:10:21,747 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:10:21,781 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.535 s
+2026-10-19 13:10:21,781 - DEBUG -      J_c_std: 1.465
+2026-10-19 13:10:21,838 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:10:23,793 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:10:23,827 - INFO -     Candidate:    x = ['6.14', '2.00'] with q = 10.84
+2026-10-19 13:10:23,827 - INFO -     Best in Samp: x = ['3.96', '3.97'] with q = 5.35
+2026-10-19 13:10:23,827 - INFO -     Best in Glob: x = ['3.92', '3.98'] with q = 5.23
+2026-10-19 13:10:23,829 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:10:23,829 - DEBUG -    Timing: Total EI iter 437.656 s
+
+2026-10-19 13:10:23,849 - INFO - EI Iteration 38:
+2026-10-19 13:10:23,849 - INFO - EI - Cuda mem:
+2026-10-19 13:10:23,850 - INFO - Allocated: 30.1 MB
+2026-10-19 13:10:23,850 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:10:30,815 - DEBUG -      Timing: EI Opt: t = 6.927 s - 1530 obj fun calls
+2026-10-19 13:10:30,815 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:10:30,870 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:10:30,904 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:10:30,947 - DEBUG -      Timing: SE Opt: t = 0.043 s
+2026-10-19 13:10:30,947 - DEBUG -      SE Opt: nit=10, nfev=35, message=Optimization terminated successfully.
+2026-10-19 13:10:31,496 - DEBUG -      Timing: Hyperpara tuning t = 0.548
+2026-10-19 13:10:31,554 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:10:31,588 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.641 s
+2026-10-19 13:10:31,588 - DEBUG -      J_c_std: 0.043
+2026-10-19 13:10:31,740 - DEBUG -      Timing: UFun Opt: t = 0.151 s
+2026-10-19 13:10:31,740 - DEBUG -      Ufun Opt: nit=50, nfev=120, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:10:32,185 - DEBUG -      Timing: Hyperpara tuning t = 0.443
+2026-10-19 13:10:32,239 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:10:32,273 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.533 s
+2026-10-19 13:10:32,273 - DEBUG -      J_c_std: 0.021
+2026-10-19 13:10:32,326 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:10:39,131 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:10:39,165 - INFO -     Candidate:    x = ['3.93', '3.92'] with q = 5.26
+2026-10-19 13:10:39,165 - INFO -     Best in Samp: x = ['3.93', '3.92'] with q = 5.26
+2026-10-19 13:10:39,165 - INFO -     Best in Glob: x = ['3.93', '3.92'] with q = 5.26
+2026-10-19 13:10:39,167 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:10:39,167 - DEBUG -    Timing: Total EI iter 452.995 s
+
+2026-10-19 13:10:39,189 - INFO - EI Iteration 39:
+2026-10-19 13:10:39,189 - INFO - EI - Cuda mem:
+2026-10-19 13:10:39,189 - INFO - Allocated: 30.3 MB
+2026-10-19 13:10:39,189 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:10:46,155 - DEBUG -      Timing: EI Opt: t = 6.927 s - 1530 obj fun calls
+2026-10-19 13:10:46,155 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:10:46,209 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:10:46,242 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:10:46,287 - DEBUG -      Timing: SE Opt: t = 0.044 s
+2026-10-19 13:10:46,287 - DEBUG -      SE Opt: nit=23, nfev=30, message=Optimization terminated successfully.
+2026-10-19 13:10:46,894 - DEBUG -      Timing: Hyperpara tuning t = 0.605
+2026-10-19 13:10:46,949 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:10:46,983 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.696 s
+2026-10-19 13:10:46,983 - DEBUG -      J_c_std: 2.751
+2026-10-19 13:10:47,102 - DEBUG -      Timing: UFun Opt: t = 0.119 s
+2026-10-19 13:10:47,102 - DEBUG -      Ufun Opt: nit=50, nfev=90, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:10:47,654 - DEBUG -      Timing: Hyperpara tuning t = 0.550
+2026-10-19 13:10:47,708 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:10:47,742 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.640 s
+2026-10-19 13:10:47,742 - DEBUG -      J_c_std: 1.147
+2026-10-19 13:10:47,796 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:10:52,763 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:10:52,797 - INFO -     Candidate:    x = ['3.71', '2.00'] with q = 9.98
+2026-10-19 13:10:52,797 - INFO -     Best in Samp: x = ['3.93', '3.92'] with q = 5.28
+2026-10-19 13:10:52,797 - INFO -     Best in Glob: x = ['3.93', '3.92'] with q = 5.28
+2026-10-19 13:10:52,798 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:10:52,798 - DEBUG -    Timing: Total EI iter 466.626 s
+
+2026-10-19 13:10:52,820 - INFO - EI Iteration 40:
+2026-10-19 13:10:52,820 - INFO - EI - Cuda mem:
+2026-10-19 13:10:52,821 - INFO - Allocated: 30.0 MB
+2026-10-19 13:10:52,821 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:10:59,801 - DEBUG -      Timing: EI Opt: t = 6.941 s - 1530 obj fun calls
+2026-10-19 13:10:59,801 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:10:59,854 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:10:59,888 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:10:59,947 - DEBUG -      Timing: SE Opt: t = 0.059 s
+2026-10-19 13:10:59,947 - DEBUG -      SE Opt: nit=10, nfev=50, message=Optimization terminated successfully.
+2026-10-19 13:11:00,423 - DEBUG -      Timing: Hyperpara tuning t = 0.474
+2026-10-19 13:11:00,476 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:11:00,510 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.563 s
+2026-10-19 13:11:00,510 - DEBUG -      J_c_std: 0.026
+2026-10-19 13:11:00,731 - DEBUG -      Timing: UFun Opt: t = 0.221 s
+2026-10-19 13:11:00,731 - DEBUG -      Ufun Opt: nit=50, nfev=183, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:11:01,224 - DEBUG -      Timing: Hyperpara tuning t = 0.491
+2026-10-19 13:11:01,280 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:11:01,314 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.583 s
+2026-10-19 13:11:01,314 - DEBUG -      J_c_std: 0.023
+2026-10-19 13:11:01,367 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:11:04,762 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:11:04,795 - INFO -     Candidate:    x = ['3.93', '3.94'] with q = 5.14
+2026-10-19 13:11:04,795 - INFO -     Best in Samp: x = ['3.93', '3.94'] with q = 5.14
+2026-10-19 13:11:04,796 - INFO -     Best in Glob: x = ['3.93', '3.94'] with q = 5.14
+2026-10-19 13:11:04,797 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:11:04,797 - DEBUG -    Timing: Total EI iter 478.625 s
+
+2026-10-19 13:11:04,817 - INFO - EI Iteration 41:
+2026-10-19 13:11:04,818 - INFO - EI - Cuda mem:
+2026-10-19 13:11:04,818 - INFO - Allocated: 30.5 MB
+2026-10-19 13:11:04,818 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:11:11,781 - DEBUG -      Timing: EI Opt: t = 6.925 s - 1530 obj fun calls
+2026-10-19 13:11:11,781 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:11:11,837 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:11:11,870 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:11:11,905 - DEBUG -      Timing: SE Opt: t = 0.035 s
+2026-10-19 13:11:11,906 - DEBUG -      SE Opt: nit=17, nfev=24, message=Optimization terminated successfully.
+2026-10-19 13:11:12,430 - DEBUG -      Timing: Hyperpara tuning t = 0.523
+2026-10-19 13:11:12,483 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:11:12,518 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.612 s
+2026-10-19 13:11:12,518 - DEBUG -      J_c_std: 3.028
+2026-10-19 13:11:12,659 - DEBUG -      Timing: UFun Opt: t = 0.141 s
+2026-10-19 13:11:12,659 - DEBUG -      Ufun Opt: nit=50, nfev=111, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:11:13,077 - DEBUG -      Timing: Hyperpara tuning t = 0.417
+2026-10-19 13:11:13,130 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:11:13,165 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.506 s
+2026-10-19 13:11:13,165 - DEBUG -      J_c_std: 0.208
+2026-10-19 13:11:13,218 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:11:20,040 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:11:20,074 - INFO -     Candidate:    x = ['4.57', '8.00'] with q = 18.32
+2026-10-19 13:11:20,074 - INFO -     Best in Samp: x = ['3.93', '3.94'] with q = 5.19
+2026-10-19 13:11:20,074 - INFO -     Best in Glob: x = ['3.93', '3.94'] with q = 5.19
+2026-10-19 13:11:20,075 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:11:20,075 - DEBUG -    Timing: Total EI iter 493.903 s
+
+2026-10-19 13:11:20,094 - INFO - EI Iteration 42:
+2026-10-19 13:11:20,095 - INFO - EI - Cuda mem:
+2026-10-19 13:11:20,095 - INFO - Allocated: 30.6 MB
+2026-10-19 13:11:20,095 - INFO - Reserved : 1244.0 MB
+2026-10-19 13:11:27,090 - DEBUG -      Timing: EI Opt: t = 6.957 s - 1530 obj fun calls
+2026-10-19 13:11:27,090 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:11:27,144 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:11:27,178 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:11:27,215 - DEBUG -      Timing: SE Opt: t = 0.037 s
+2026-10-19 13:11:27,215 - DEBUG -      SE Opt: nit=18, nfev=25, message=Optimization terminated successfully.
+2026-10-19 13:11:27,871 - DEBUG -      Timing: Hyperpara tuning t = 0.654
+2026-10-19 13:11:27,927 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:11:27,961 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.746 s
+2026-10-19 13:11:27,961 - DEBUG -      J_c_std: 1.059
+2026-10-19 13:11:28,097 - DEBUG -      Timing: UFun Opt: t = 0.136 s
+2026-10-19 13:11:28,097 - DEBUG -      Ufun Opt: nit=50, nfev=105, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:11:28,621 - DEBUG -      Timing: Hyperpara tuning t = 0.522
+2026-10-19 13:11:28,675 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:11:28,709 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.612 s
+2026-10-19 13:11:28,709 - DEBUG -      J_c_std: 0.183
+2026-10-19 13:11:28,764 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:11:35,589 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:11:35,624 - INFO -     Candidate:    x = ['5.58', '5.17'] with q = 13.70
+2026-10-19 13:11:35,624 - INFO -     Best in Samp: x = ['3.93', '3.94'] with q = 5.43
+2026-10-19 13:11:35,624 - INFO -     Best in Glob: x = ['3.91', '3.99'] with q = 5.39
+2026-10-19 13:11:35,625 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:11:35,625 - DEBUG -    Timing: Total EI iter 509.453 s
+
+2026-10-19 13:11:35,645 - INFO - EI Iteration 43:
+2026-10-19 13:11:35,645 - INFO - EI - Cuda mem:
+2026-10-19 13:11:35,646 - INFO - Allocated: 30.4 MB
+2026-10-19 13:11:35,646 - INFO - Reserved : 1828.0 MB
+2026-10-19 13:11:42,648 - DEBUG -      Timing: EI Opt: t = 6.964 s - 1530 obj fun calls
+2026-10-19 13:11:42,648 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:11:42,701 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:11:42,735 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:11:42,781 - DEBUG -      Timing: SE Opt: t = 0.046 s
+2026-10-19 13:11:42,781 - DEBUG -      SE Opt: nit=24, nfev=31, message=Optimization terminated successfully.
+2026-10-19 13:11:43,354 - DEBUG -      Timing: Hyperpara tuning t = 0.571
+2026-10-19 13:11:43,409 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:11:43,443 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.662 s
+2026-10-19 13:11:43,443 - DEBUG -      J_c_std: 1.478
+2026-10-19 13:11:43,631 - DEBUG -      Timing: UFun Opt: t = 0.187 s
+2026-10-19 13:11:43,631 - DEBUG -      Ufun Opt: nit=50, nfev=156, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:11:44,178 - DEBUG -      Timing: Hyperpara tuning t = 0.546
+2026-10-19 13:11:44,232 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:11:44,267 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.636 s
+2026-10-19 13:11:44,267 - DEBUG -      J_c_std: 0.460
+2026-10-19 13:11:44,320 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:11:51,025 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:11:51,060 - INFO -     Candidate:    x = ['6.25', '3.65'] with q = 9.95
+2026-10-19 13:11:51,060 - INFO -     Best in Samp: x = ['3.93', '3.94'] with q = 5.28
+2026-10-19 13:11:51,060 - INFO -     Best in Glob: x = ['3.93', '3.94'] with q = 5.28
+2026-10-19 13:11:51,061 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:11:51,061 - DEBUG -    Timing: Total EI iter 524.889 s
+
+2026-10-19 13:11:51,082 - INFO - EI Iteration 44:
+2026-10-19 13:11:51,082 - INFO - EI - Cuda mem:
+2026-10-19 13:11:51,082 - INFO - Allocated: 30.9 MB
+2026-10-19 13:11:51,082 - INFO - Reserved : 2432.0 MB
+2026-10-19 13:11:58,078 - DEBUG -      Timing: EI Opt: t = 6.957 s - 1530 obj fun calls
+2026-10-19 13:11:58,078 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:11:58,133 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:11:58,167 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:11:58,198 - DEBUG -      Timing: SE Opt: t = 0.031 s
+2026-10-19 13:11:58,198 - DEBUG -      SE Opt: nit=14, nfev=21, message=Optimization terminated successfully.
+2026-10-19 13:11:58,799 - DEBUG -      Timing: Hyperpara tuning t = 0.598
+2026-10-19 13:11:58,853 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:11:58,887 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.689 s
+2026-10-19 13:11:58,888 - DEBUG -      J_c_std: 1.495
+2026-10-19 13:11:59,059 - DEBUG -      Timing: UFun Opt: t = 0.171 s
+2026-10-19 13:11:59,059 - DEBUG -      Ufun Opt: nit=50, nfev=138, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:11:59,703 - DEBUG -      Timing: Hyperpara tuning t = 0.643
+2026-10-19 13:11:59,758 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:11:59,794 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.735 s
+2026-10-19 13:11:59,794 - DEBUG -      J_c_std: 0.366
+2026-10-19 13:11:59,847 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:12:06,678 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:12:06,713 - INFO -     Candidate:    x = ['2.01', '2.01'] with q = 11.64
+2026-10-19 13:12:06,714 - INFO -     Best in Samp: x = ['3.93', '3.94'] with q = 5.27
+2026-10-19 13:12:06,714 - INFO -     Best in Glob: x = ['3.91', '3.89'] with q = 5.25
+2026-10-19 13:12:06,716 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:12:06,716 - DEBUG -    Timing: Total EI iter 540.543 s
+
+2026-10-19 13:12:06,737 - INFO - EI Iteration 45:
+2026-10-19 13:12:06,737 - INFO - EI - Cuda mem:
+2026-10-19 13:12:06,737 - INFO - Allocated: 31.0 MB
+2026-10-19 13:12:06,737 - INFO - Reserved : 3056.0 MB
+2026-10-19 13:12:13,746 - DEBUG -      Timing: EI Opt: t = 6.969 s - 1530 obj fun calls
+2026-10-19 13:12:13,746 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:12:13,801 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:12:13,836 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:12:13,892 - DEBUG -      Timing: SE Opt: t = 0.055 s
+2026-10-19 13:12:13,892 - DEBUG -      SE Opt: nit=31, nfev=38, message=Optimization terminated successfully.
+2026-10-19 13:12:14,511 - DEBUG -      Timing: Hyperpara tuning t = 0.617
+2026-10-19 13:12:14,567 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:12:14,602 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.710 s
+2026-10-19 13:12:14,602 - DEBUG -      J_c_std: 0.021
+2026-10-19 13:12:14,777 - DEBUG -      Timing: UFun Opt: t = 0.175 s
+2026-10-19 13:12:14,777 - DEBUG -      Ufun Opt: nit=50, nfev=141, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:12:15,310 - DEBUG -      Timing: Hyperpara tuning t = 0.531
+2026-10-19 13:12:15,364 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:12:15,399 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.622 s
+2026-10-19 13:12:15,399 - DEBUG -      J_c_std: 0.021
+2026-10-19 13:12:15,452 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:12:19,943 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:12:19,978 - INFO -     Candidate:    x = ['3.91', '3.93'] with q = 5.21
+2026-10-19 13:12:19,978 - INFO -     Best in Samp: x = ['3.91', '3.93'] with q = 5.21
+2026-10-19 13:12:19,978 - INFO -     Best in Glob: x = ['3.91', '3.93'] with q = 5.21
+2026-10-19 13:12:19,979 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:12:19,979 - DEBUG -    Timing: Total EI iter 553.807 s
+
+2026-10-19 13:12:20,002 - INFO - EI Iteration 46:
+2026-10-19 13:12:20,002 - INFO - EI - Cuda mem:
+2026-10-19 13:12:20,002 - INFO - Allocated: 30.8 MB
+2026-10-19 13:12:20,002 - INFO - Reserved : 3698.0 MB
+2026-10-19 13:12:27,036 - DEBUG -      Timing: EI Opt: t = 6.996 s - 1530 obj fun calls
+2026-10-19 13:12:27,037 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:12:27,090 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:12:27,125 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:12:27,176 - DEBUG -      Timing: SE Opt: t = 0.051 s
+2026-10-19 13:12:27,176 - DEBUG -      SE Opt: nit=19, nfev=38, message=Optimization terminated successfully.
+2026-10-19 13:12:27,851 - DEBUG -      Timing: Hyperpara tuning t = 0.673
+2026-10-19 13:12:27,905 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:12:27,941 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.764 s
+2026-10-19 13:12:27,941 - DEBUG -      J_c_std: 0.030
+2026-10-19 13:12:28,131 - DEBUG -      Timing: UFun Opt: t = 0.191 s
+2026-10-19 13:12:28,131 - DEBUG -      Ufun Opt: nit=50, nfev=156, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:12:28,682 - DEBUG -      Timing: Hyperpara tuning t = 0.548
+2026-10-19 13:12:28,737 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:12:28,772 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.640 s
+2026-10-19 13:12:28,772 - DEBUG -      J_c_std: 0.038
+2026-10-19 13:12:28,830 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:12:30,806 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:12:30,840 - INFO -     Candidate:    x = ['4.00', '3.92'] with q = 5.27
+2026-10-19 13:12:30,840 - INFO -     Best in Samp: x = ['4.00', '3.92'] with q = 5.27
+2026-10-19 13:12:30,840 - INFO -     Best in Glob: x = ['4.00', '3.92'] with q = 5.27
+2026-10-19 13:12:30,842 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:12:30,842 - DEBUG -    Timing: Total EI iter 564.669 s
+
+2026-10-19 13:12:30,864 - INFO - EI Iteration 47:
+2026-10-19 13:12:30,864 - INFO - EI - Cuda mem:
+2026-10-19 13:12:30,864 - INFO - Allocated: 31.3 MB
+2026-10-19 13:12:30,864 - INFO - Reserved : 4360.0 MB
+2026-10-19 13:12:37,898 - DEBUG -      Timing: EI Opt: t = 6.996 s - 1530 obj fun calls
+2026-10-19 13:12:37,898 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:12:37,954 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:12:37,988 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:12:38,023 - DEBUG -      Timing: SE Opt: t = 0.035 s
+2026-10-19 13:12:38,023 - DEBUG -      SE Opt: nit=17, nfev=24, message=Optimization terminated successfully.
+2026-10-19 13:12:38,637 - DEBUG -      Timing: Hyperpara tuning t = 0.612
+2026-10-19 13:12:38,691 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:12:38,726 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.703 s
+2026-10-19 13:12:38,726 - DEBUG -      J_c_std: 1.930
+2026-10-19 13:12:38,905 - DEBUG -      Timing: UFun Opt: t = 0.178 s
+2026-10-19 13:12:38,905 - DEBUG -      Ufun Opt: nit=50, nfev=150, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:12:39,406 - DEBUG -      Timing: Hyperpara tuning t = 0.499
+2026-10-19 13:12:39,462 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:12:39,497 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.592 s
+2026-10-19 13:12:39,497 - DEBUG -      J_c_std: 0.259
+2026-10-19 13:12:39,556 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:12:44,530 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:12:44,565 - INFO -     Candidate:    x = ['8.00', '3.03'] with q = 18.11
+2026-10-19 13:12:44,565 - INFO -     Best in Samp: x = ['4.00', '3.92'] with q = 5.36
+2026-10-19 13:12:44,565 - INFO -     Best in Glob: x = ['4.00', '3.92'] with q = 5.36
+2026-10-19 13:12:44,566 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:12:44,566 - DEBUG -    Timing: Total EI iter 578.394 s
+
+2026-10-19 13:12:44,586 - INFO - EI Iteration 48:
+2026-10-19 13:12:44,586 - INFO - EI - Cuda mem:
+2026-10-19 13:12:44,587 - INFO - Allocated: 31.4 MB
+2026-10-19 13:12:44,587 - INFO - Reserved : 5042.0 MB
+2026-10-19 13:12:51,602 - DEBUG -      Timing: EI Opt: t = 6.977 s - 1530 obj fun calls
+2026-10-19 13:12:51,602 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:12:51,660 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:12:51,695 - DEBUG -      Timing: Gen Plot data: t = 0.000 s
+2026-10-19 13:12:51,770 - DEBUG -      Timing: SE Opt: t = 0.075 s
+2026-10-19 13:12:51,770 - DEBUG -      SE Opt: nit=30, nfev=58, message=Optimization terminated successfully.
+2026-10-19 13:12:52,383 - DEBUG -      Timing: Hyperpara tuning t = 0.611
+2026-10-19 13:12:52,438 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:12:52,473 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.703 s
+2026-10-19 13:12:52,473 - DEBUG -      J_c_std: 0.019
+2026-10-19 13:12:52,635 - DEBUG -      Timing: UFun Opt: t = 0.161 s
+2026-10-19 13:12:52,635 - DEBUG -      Ufun Opt: nit=50, nfev=132, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:12:53,195 - DEBUG -      Timing: Hyperpara tuning t = 0.559
+2026-10-19 13:12:53,250 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:12:53,285 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.651 s
+2026-10-19 13:12:53,285 - DEBUG -      J_c_std: 0.018
+2026-10-19 13:12:53,339 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:12:55,838 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:12:55,873 - INFO -     Candidate:    x = ['3.93', '3.94'] with q = 5.35
+2026-10-19 13:12:55,873 - INFO -     Best in Samp: x = ['4.00', '3.92'] with q = 5.21
+2026-10-19 13:12:55,873 - INFO -     Best in Glob: x = ['4.00', '3.92'] with q = 5.21
+2026-10-19 13:12:55,875 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:12:55,875 - DEBUG -    Timing: Total EI iter 589.703 s
+
+2026-10-19 13:12:55,898 - INFO - EM Iteration 1:
+2026-10-19 13:12:55,898 - INFO - EM - Cuda mem:
+2026-10-19 13:12:55,898 - INFO - Allocated: 8.7 MB
+2026-10-19 13:12:55,898 - INFO - Reserved : 5744.0 MB
+2026-10-19 13:13:01,344 - DEBUG -      EI Opt: nit=40, nfev=1230, message=Optimization terminated successfully.
+2026-10-19 13:13:01,398 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:13:01,480 - DEBUG -      Timing: SE Opt: t = 0.047 s
+2026-10-19 13:13:01,480 - DEBUG -      SE Opt: nit=18, nfev=34, message=Optimization terminated successfully.
+2026-10-19 13:13:02,066 - DEBUG -      Timing: Hyperpara tuning t = 0.584
+2026-10-19 13:13:02,120 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:02,155 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.675 s
+2026-10-19 13:13:02,443 - DEBUG -      Timing: UFun Opt: t = 0.288 s
+2026-10-19 13:13:02,444 - DEBUG -      Ufun Opt: nit=50, nfev=246, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:03,005 - DEBUG -      Timing: Hyperpara tuning t = 0.560
+2026-10-19 13:13:03,060 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:03,095 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.651 s
+2026-10-19 13:13:03,148 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:13:03,184 - INFO -     Candidate:    x = ['3.96', '3.94'] with q = 5.14
+2026-10-19 13:13:03,184 - INFO -     Best:         x = ['3.93', '3.94'] with q = 5.13
+2026-10-19 13:13:03,186 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:13:03,186 - DEBUG -         Timing: Total EI iter 7.288 s
+
+2026-10-19 13:13:03,208 - INFO - EM Iteration 2:
+2026-10-19 13:13:03,208 - INFO - EM - Cuda mem:
+2026-10-19 13:13:03,209 - INFO - Allocated: 19.9 MB
+2026-10-19 13:13:03,209 - INFO - Reserved : 6466.0 MB
+2026-10-19 13:13:07,467 - DEBUG -      EI Opt: nit=31, nfev=960, message=Optimization terminated successfully.
+2026-10-19 13:13:07,520 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:13:07,600 - DEBUG -      Timing: SE Opt: t = 0.045 s
+2026-10-19 13:13:07,600 - DEBUG -      SE Opt: nit=11, nfev=36, message=Optimization terminated successfully.
+2026-10-19 13:13:08,275 - DEBUG -      Timing: Hyperpara tuning t = 0.673
+2026-10-19 13:13:08,329 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:08,364 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.764 s
+2026-10-19 13:13:08,550 - DEBUG -      Timing: UFun Opt: t = 0.185 s
+2026-10-19 13:13:08,550 - DEBUG -      Ufun Opt: nit=50, nfev=153, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:09,206 - DEBUG -      Timing: Hyperpara tuning t = 0.654
+2026-10-19 13:13:09,260 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:09,296 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.747 s
+2026-10-19 13:13:09,350 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:13:09,388 - INFO -     Candidate:    x = ['3.92', '3.95'] with q = 5.26
+2026-10-19 13:13:09,388 - INFO -     Best:         x = ['3.92', '3.95'] with q = 5.26
+2026-10-19 13:13:09,389 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:13:09,389 - DEBUG -         Timing: Total EI iter 13.492 s
+
+2026-10-19 13:13:09,415 - INFO - EM Iteration 3:
+2026-10-19 13:13:09,415 - INFO - EM - Cuda mem:
+2026-10-19 13:13:09,415 - INFO - Allocated: 20.0 MB
+2026-10-19 13:13:09,415 - INFO - Reserved : 7210.0 MB
+2026-10-19 13:13:12,094 - DEBUG -      EI Opt: nit=19, nfev=600, message=Optimization terminated successfully.
+2026-10-19 13:13:12,148 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:12,244 - DEBUG -      Timing: SE Opt: t = 0.061 s
+2026-10-19 13:13:12,244 - DEBUG -      SE Opt: nit=13, nfev=50, message=Optimization terminated successfully.
+2026-10-19 13:13:12,923 - DEBUG -      Timing: Hyperpara tuning t = 0.677
+2026-10-19 13:13:12,978 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:13,013 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.768 s
+2026-10-19 13:13:13,168 - DEBUG -      Timing: UFun Opt: t = 0.155 s
+2026-10-19 13:13:13,168 - DEBUG -      Ufun Opt: nit=50, nfev=123, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:13,925 - DEBUG -      Timing: Hyperpara tuning t = 0.755
+2026-10-19 13:13:13,979 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:14,018 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.849 s
+2026-10-19 13:13:14,071 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:13:14,110 - INFO -     Candidate:    x = ['3.91', '3.96'] with q = 5.21
+2026-10-19 13:13:14,110 - INFO -     Best:         x = ['3.91', '3.96'] with q = 5.21
+2026-10-19 13:13:14,111 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:13:14,111 - DEBUG -         Timing: Total EI iter 18.214 s
+
+2026-10-19 13:13:14,133 - INFO - EM Iteration 4:
+2026-10-19 13:13:14,133 - INFO - EM - Cuda mem:
+2026-10-19 13:13:14,133 - INFO - Allocated: 20.9 MB
+2026-10-19 13:13:14,133 - INFO - Reserved : 7976.0 MB
+2026-10-19 13:13:17,876 - DEBUG -      EI Opt: nit=27, nfev=840, message=Optimization terminated successfully.
+2026-10-19 13:13:17,930 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:13:18,140 - DEBUG -      Timing: SE Opt: t = 0.175 s
+2026-10-19 13:13:18,140 - DEBUG -      SE Opt: nit=19, nfev=155, message=Optimization terminated successfully.
+2026-10-19 13:13:18,667 - DEBUG -      Timing: Hyperpara tuning t = 0.525
+2026-10-19 13:13:18,723 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:13:18,759 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.619 s
+2026-10-19 13:13:18,958 - DEBUG -      Timing: UFun Opt: t = 0.200 s
+2026-10-19 13:13:18,958 - DEBUG -      Ufun Opt: nit=50, nfev=165, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:19,522 - DEBUG -      Timing: Hyperpara tuning t = 0.562
+2026-10-19 13:13:19,576 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:19,612 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.653 s
+2026-10-19 13:13:19,665 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:19,701 - INFO -     Candidate:    x = ['4.00', '3.95'] with q = 5.37
+2026-10-19 13:13:19,701 - INFO -     Best:         x = ['3.91', '3.96'] with q = 5.13
+2026-10-19 13:13:19,702 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:13:19,702 - DEBUG -         Timing: Total EI iter 23.805 s
+
+2026-10-19 13:13:19,725 - INFO -     delta_x_abs_ma = 4.64e-02 > 0.001 --> Continue
+2026-10-19 13:13:19,725 - INFO -     delta_x_rel_ma = 8.27e-03 > 0.0001 --> Continue
+
+2026-10-19 13:13:19,726 - INFO -     delta_y_abs_ma = 1.09e-01 > 0.001 --> Continue
+2026-10-19 13:13:19,726 - INFO -     delta_y_rel_ma = 2.03e-02 > 0.0001 --> Continue
+
+2026-10-19 13:13:19,726 - INFO - EM Iteration 5:
+2026-10-19 13:13:19,726 - INFO - EM - Cuda mem:
+2026-10-19 13:13:19,726 - INFO - Allocated: 20.9 MB
+2026-10-19 13:13:19,726 - INFO - Reserved : 8764.0 MB
+2026-10-19 13:13:23,725 - DEBUG -      EI Opt: nit=29, nfev=900, message=Optimization terminated successfully.
+2026-10-19 13:13:23,781 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:13:23,912 - DEBUG -      Timing: SE Opt: t = 0.095 s
+2026-10-19 13:13:23,912 - DEBUG -      SE Opt: nit=12, nfev=82, message=Optimization terminated successfully.
+2026-10-19 13:13:24,505 - DEBUG -      Timing: Hyperpara tuning t = 0.592
+2026-10-19 13:13:24,559 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:24,595 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.683 s
+2026-10-19 13:13:24,764 - DEBUG -      Timing: UFun Opt: t = 0.169 s
+2026-10-19 13:13:24,764 - DEBUG -      Ufun Opt: nit=50, nfev=135, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:25,258 - DEBUG -      Timing: Hyperpara tuning t = 0.492
+2026-10-19 13:13:25,312 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:25,348 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.584 s
+2026-10-19 13:13:25,401 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:25,437 - INFO -     Candidate:    x = ['3.95', '3.93'] with q = 5.35
+2026-10-19 13:13:25,437 - INFO -     Best:         x = ['3.91', '3.96'] with q = 5.26
+2026-10-19 13:13:25,439 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:13:25,439 - DEBUG -         Timing: Total EI iter 29.541 s
+
+2026-10-19 13:13:25,462 - INFO -     delta_x_abs_ma = 4.78e-02 > 0.001 --> Continue
+2026-10-19 13:13:25,462 - INFO -     delta_x_rel_ma = 8.51e-03 > 0.0001 --> Continue
+
+2026-10-19 13:13:25,462 - INFO -     delta_y_abs_ma = 7.31e-02 > 0.001 --> Continue
+2026-10-19 13:13:25,462 - INFO -     delta_y_rel_ma = 1.36e-02 > 0.0001 --> Continue
+
+2026-10-19 13:13:25,462 - INFO - EM Iteration 6:
+2026-10-19 13:13:25,462 - INFO - EM - Cuda mem:
+2026-10-19 13:13:25,463 - INFO - Allocated: 21.0 MB
+2026-10-19 13:13:25,463 - INFO - Reserved : 9574.0 MB
+2026-10-19 13:13:32,263 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:32,318 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:32,429 - DEBUG -      Timing: SE Opt: t = 0.076 s
+2026-10-19 13:13:32,429 - DEBUG -      SE Opt: nit=12, nfev=64, message=Optimization terminated successfully.
+2026-10-19 13:13:32,904 - DEBUG -      Timing: Hyperpara tuning t = 0.473
+2026-10-19 13:13:32,958 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:32,994 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.564 s
+2026-10-19 13:13:33,204 - DEBUG -      Timing: UFun Opt: t = 0.210 s
+2026-10-19 13:13:33,204 - DEBUG -      Ufun Opt: nit=50, nfev=174, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:33,846 - DEBUG -      Timing: Hyperpara tuning t = 0.640
+2026-10-19 13:13:33,900 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:33,936 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.731 s
+2026-10-19 13:13:33,989 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:13:34,025 - INFO -     Candidate:    x = ['3.95', '3.95'] with q = 5.14
+2026-10-19 13:13:34,025 - INFO -     Best:         x = ['3.95', '3.95'] with q = 5.14
+2026-10-19 13:13:34,026 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:13:34,026 - DEBUG -         Timing: Total EI iter 38.128 s
+
+2026-10-19 13:13:34,049 - INFO -     delta_x_abs_ma = 5.11e-02 > 0.001 --> Continue
+2026-10-19 13:13:34,049 - INFO -     delta_x_rel_ma = 9.09e-03 > 0.0001 --> Continue
+
+2026-10-19 13:13:34,050 - INFO -     delta_y_abs_ma = 1.26e-01 > 0.001 --> Continue
+2026-10-19 13:13:34,050 - INFO -     delta_y_rel_ma = 2.35e-02 > 0.0001 --> Continue
+
+2026-10-19 13:13:34,050 - INFO - EM Iteration 7:
+2026-10-19 13:13:34,050 - INFO - EM - Cuda mem:
+2026-10-19 13:13:34,050 - INFO - Allocated: 20.9 MB
+2026-10-19 13:13:34,050 - INFO - Reserved : 10406.0 MB
+2026-10-19 13:13:40,845 - DEBUG -      EI Opt: nit=50, nfev=1530, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:40,900 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:13:41,054 - DEBUG -      Timing: SE Opt: t = 0.118 s
+2026-10-19 13:13:41,054 - DEBUG -      SE Opt: nit=21, nfev=100, message=Optimization terminated successfully.
+2026-10-19 13:13:41,663 - DEBUG -      Timing: Hyperpara tuning t = 0.608
+2026-10-19 13:13:41,719 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:13:41,755 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.701 s
+2026-10-19 13:13:41,891 - DEBUG -      Timing: UFun Opt: t = 0.135 s
+2026-10-19 13:13:41,891 - DEBUG -      Ufun Opt: nit=50, nfev=102, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:42,508 - DEBUG -      Timing: Hyperpara tuning t = 0.615
+2026-10-19 13:13:42,562 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:42,598 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.707 s
+2026-10-19 13:13:42,652 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:42,691 - INFO -     Candidate:    x = ['3.93', '3.93'] with q = 5.17
+2026-10-19 13:13:42,691 - INFO -     Best:         x = ['3.93', '3.93'] with q = 5.17
+2026-10-19 13:13:42,696 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:13:42,696 - DEBUG -         Timing: Total EI iter 46.798 s
+
+2026-10-19 13:13:42,719 - INFO -     delta_x_abs_ma = 3.33e-02 > 0.001 --> Continue
+2026-10-19 13:13:42,719 - INFO -     delta_x_rel_ma = 5.92e-03 > 0.0001 --> Continue
+
+2026-10-19 13:13:42,719 - INFO -     delta_y_abs_ma = 8.50e-02 > 0.001 --> Continue
+2026-10-19 13:13:42,720 - INFO -     delta_y_rel_ma = 1.58e-02 > 0.0001 --> Continue
+
+2026-10-19 13:13:42,720 - INFO - EM Iteration 8:
+2026-10-19 13:13:42,720 - INFO - EM - Cuda mem:
+2026-10-19 13:13:42,720 - INFO - Allocated: 21.0 MB
+2026-10-19 13:13:42,720 - INFO - Reserved : 11260.0 MB
+2026-10-19 13:13:46,206 - DEBUG -      EI Opt: nit=25, nfev=780, message=Optimization terminated successfully.
+2026-10-19 13:13:46,259 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:13:46,385 - DEBUG -      Timing: SE Opt: t = 0.089 s
+2026-10-19 13:13:46,385 - DEBUG -      SE Opt: nit=18, nfev=73, message=Optimization terminated successfully.
+2026-10-19 13:13:47,071 - DEBUG -      Timing: Hyperpara tuning t = 0.685
+2026-10-19 13:13:47,126 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:47,162 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.777 s
+2026-10-19 13:13:47,307 - DEBUG -      Timing: UFun Opt: t = 0.145 s
+2026-10-19 13:13:47,307 - DEBUG -      Ufun Opt: nit=50, nfev=114, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:47,960 - DEBUG -      Timing: Hyperpara tuning t = 0.652
+2026-10-19 13:13:48,016 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:13:48,052 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.745 s
+2026-10-19 13:13:48,107 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:13:48,146 - INFO -     Candidate:    x = ['3.97', '3.98'] with q = 5.00
+2026-10-19 13:13:48,146 - INFO -     Best:         x = ['3.97', '3.98'] with q = 5.00
+2026-10-19 13:13:48,147 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:13:48,147 - DEBUG -         Timing: Total EI iter 52.250 s
+
+2026-10-19 13:13:48,171 - INFO -     delta_x_abs_ma = 3.81e-02 > 0.001 --> Continue
+2026-10-19 13:13:48,171 - INFO -     delta_x_rel_ma = 6.77e-03 > 0.0001 --> Continue
+
+2026-10-19 13:13:48,171 - INFO -     delta_y_abs_ma = 1.38e-01 > 0.001 --> Continue
+2026-10-19 13:13:48,171 - INFO -     delta_y_rel_ma = 2.56e-02 > 0.0001 --> Continue
+
+2026-10-19 13:13:48,171 - INFO - EM Iteration 9:
+2026-10-19 13:13:48,171 - INFO - EM - Cuda mem:
+2026-10-19 13:13:48,171 - INFO - Allocated: 20.9 MB
+2026-10-19 13:13:48,171 - INFO - Reserved : 12138.0 MB
+2026-10-19 13:13:51,523 - DEBUG -      EI Opt: nit=24, nfev=750, message=Optimization terminated successfully.
+2026-10-19 13:13:51,576 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:13:51,671 - DEBUG -      Timing: SE Opt: t = 0.059 s
+2026-10-19 13:13:51,672 - DEBUG -      SE Opt: nit=32, nfev=39, message=Optimization terminated successfully.
+2026-10-19 13:13:52,276 - DEBUG -      Timing: Hyperpara tuning t = 0.603
+2026-10-19 13:13:52,330 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:52,367 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.695 s
+2026-10-19 13:13:52,569 - DEBUG -      Timing: UFun Opt: t = 0.202 s
+2026-10-19 13:13:52,569 - DEBUG -      Ufun Opt: nit=50, nfev=168, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:53,248 - DEBUG -      Timing: Hyperpara tuning t = 0.678
+2026-10-19 13:13:53,302 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:53,342 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.773 s
+2026-10-19 13:13:53,396 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:53,435 - INFO -     Candidate:    x = ['3.93', '4.00'] with q = 5.24
+2026-10-19 13:13:53,435 - INFO -     Best:         x = ['3.97', '3.98'] with q = 5.21
+2026-10-19 13:13:53,437 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:13:53,437 - DEBUG -         Timing: Total EI iter 57.539 s
+
+2026-10-19 13:13:53,460 - INFO -     delta_x_abs_ma = 4.69e-02 > 0.001 --> Continue
+2026-10-19 13:13:53,460 - INFO -     delta_x_rel_ma = 8.35e-03 > 0.0001 --> Continue
+
+2026-10-19 13:13:53,460 - INFO -     delta_y_abs_ma = 1.47e-01 > 0.001 --> Continue
+2026-10-19 13:13:53,461 - INFO -     delta_y_rel_ma = 2.75e-02 > 0.0001 --> Continue
+
+2026-10-19 13:13:53,461 - INFO - EM Iteration 10:
+2026-10-19 13:13:53,461 - INFO - EM - Cuda mem:
+2026-10-19 13:13:53,461 - INFO - Allocated: 21.1 MB
+2026-10-19 13:13:53,461 - INFO - Reserved : 13040.0 MB
+2026-10-19 13:13:58,152 - DEBUG -      EI Opt: nit=34, nfev=1050, message=Optimization terminated successfully.
+2026-10-19 13:13:58,206 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:58,336 - DEBUG -      Timing: SE Opt: t = 0.095 s
+2026-10-19 13:13:58,337 - DEBUG -      SE Opt: nit=11, nfev=81, message=Optimization terminated successfully.
+2026-10-19 13:13:59,044 - DEBUG -      Timing: Hyperpara tuning t = 0.706
+2026-10-19 13:13:59,099 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:13:59,135 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.798 s
+2026-10-19 13:13:59,289 - DEBUG -      Timing: UFun Opt: t = 0.154 s
+2026-10-19 13:13:59,289 - DEBUG -      Ufun Opt: nit=50, nfev=123, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:13:59,921 - DEBUG -      Timing: Hyperpara tuning t = 0.629
+2026-10-19 13:13:59,975 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:00,014 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.725 s
+2026-10-19 13:14:00,067 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:14:00,107 - INFO -     Candidate:    x = ['3.99', '3.94'] with q = 5.17
+2026-10-19 13:14:00,107 - INFO -     Best:         x = ['3.99', '3.94'] with q = 5.17
+2026-10-19 13:14:00,109 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:00,109 - DEBUG -         Timing: Total EI iter 64.211 s
+
+2026-10-19 13:14:00,133 - INFO -     delta_x_abs_ma = 6.39e-02 > 0.001 --> Continue
+2026-10-19 13:14:00,133 - INFO -     delta_x_rel_ma = 1.14e-02 > 0.0001 --> Continue
+
+2026-10-19 13:14:00,133 - INFO -     delta_y_abs_ma = 1.59e-01 > 0.001 --> Continue
+2026-10-19 13:14:00,133 - INFO -     delta_y_rel_ma = 2.96e-02 > 0.0001 --> Continue
+
+2026-10-19 13:14:00,133 - INFO - EM Iteration 11:
+2026-10-19 13:14:00,133 - INFO - EM - Cuda mem:
+2026-10-19 13:14:00,133 - INFO - Allocated: 20.9 MB
+2026-10-19 13:14:00,134 - INFO - Reserved : 13966.0 MB
+2026-10-19 13:14:03,098 - DEBUG -      EI Opt: nit=21, nfev=660, message=Optimization terminated successfully.
+2026-10-19 13:14:03,152 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:03,245 - DEBUG -      Timing: SE Opt: t = 0.056 s
+2026-10-19 13:14:03,245 - DEBUG -      SE Opt: nit=31, nfev=38, message=Optimization terminated successfully.
+2026-10-19 13:14:04,010 - DEBUG -      Timing: Hyperpara tuning t = 0.764
+2026-10-19 13:14:04,064 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:04,101 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.856 s
+2026-10-19 13:14:04,247 - DEBUG -      Timing: UFun Opt: t = 0.145 s
+2026-10-19 13:14:04,247 - DEBUG -      Ufun Opt: nit=50, nfev=114, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:04,891 - DEBUG -      Timing: Hyperpara tuning t = 0.642
+2026-10-19 13:14:04,949 - DEBUG -      Comp matheron path = 0.058 s
+2026-10-19 13:14:04,988 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.741 s
+2026-10-19 13:14:05,041 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:14:05,081 - INFO -     Candidate:    x = ['3.94', '3.98'] with q = 5.19
+2026-10-19 13:14:05,081 - INFO -     Best:         x = ['3.94', '3.98'] with q = 5.19
+2026-10-19 13:14:05,084 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:05,084 - DEBUG -         Timing: Total EI iter 69.187 s
+
+2026-10-19 13:14:05,108 - INFO -     delta_x_abs_ma = 6.39e-02 > 0.001 --> Continue
+2026-10-19 13:14:05,108 - INFO -     delta_x_rel_ma = 1.14e-02 > 0.0001 --> Continue
+
+2026-10-19 13:14:05,108 - INFO -     delta_y_abs_ma = 1.06e-01 > 0.001 --> Continue
+2026-10-19 13:14:05,108 - INFO -     delta_y_rel_ma = 1.98e-02 > 0.0001 --> Continue
+
+2026-10-19 13:14:05,108 - INFO - EM Iteration 12:
+2026-10-19 13:14:05,108 - INFO - EM - Cuda mem:
+2026-10-19 13:14:05,109 - INFO - Allocated: 21.1 MB
+2026-10-19 13:14:05,109 - INFO - Reserved : 14916.0 MB
+2026-10-19 13:14:11,545 - DEBUG -      EI Opt: nit=47, nfev=1440, message=Optimization terminated successfully.
+2026-10-19 13:14:11,601 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:14:11,739 - DEBUG -      Timing: SE Opt: t = 0.102 s
+2026-10-19 13:14:11,739 - DEBUG -      SE Opt: nit=12, nfev=88, message=Optimization terminated successfully.
+2026-10-19 13:14:12,597 - DEBUG -      Timing: Hyperpara tuning t = 0.856
+2026-10-19 13:14:12,651 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:12,688 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.949 s
+2026-10-19 13:14:12,855 - DEBUG -      Timing: UFun Opt: t = 0.167 s
+2026-10-19 13:14:12,855 - DEBUG -      Ufun Opt: nit=50, nfev=132, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:13,511 - DEBUG -      Timing: Hyperpara tuning t = 0.654
+2026-10-19 13:14:13,565 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:13,607 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.752 s
+2026-10-19 13:14:13,660 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:14:13,702 - INFO -     Candidate:    x = ['3.94', '3.97'] with q = 5.21
+2026-10-19 13:14:13,702 - INFO -     Best:         x = ['3.94', '3.98'] with q = 5.18
+2026-10-19 13:14:13,704 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:13,704 - DEBUG -         Timing: Total EI iter 77.807 s
+
+2026-10-19 13:14:13,732 - INFO -     delta_x_abs_ma = 5.42e-02 > 0.001 --> Continue
+2026-10-19 13:14:13,732 - INFO -     delta_x_rel_ma = 9.65e-03 > 0.0001 --> Continue
+
+2026-10-19 13:14:13,732 - INFO -     delta_y_abs_ma = 3.51e-02 > 0.001 --> Continue
+2026-10-19 13:14:13,732 - INFO -     delta_y_rel_ma = 6.55e-03 > 0.0001 --> Continue
+
+2026-10-19 13:14:13,732 - INFO - EM Iteration 13:
+2026-10-19 13:14:13,732 - INFO - EM - Cuda mem:
+2026-10-19 13:14:13,732 - INFO - Allocated: 20.9 MB
+2026-10-19 13:14:13,732 - INFO - Reserved : 15890.0 MB
+2026-10-19 13:14:16,577 - DEBUG -      EI Opt: nit=20, nfev=630, message=Optimization terminated successfully.
+2026-10-19 13:14:16,634 - DEBUG -      Comp matheron path = 0.057 s
+2026-10-19 13:14:16,753 - DEBUG -      Timing: SE Opt: t = 0.080 s
+2026-10-19 13:14:16,753 - DEBUG -      SE Opt: nit=17, nfev=66, message=Optimization terminated successfully.
+2026-10-19 13:14:17,337 - DEBUG -      Timing: Hyperpara tuning t = 0.582
+2026-10-19 13:14:17,393 - DEBUG -      Comp matheron path = 0.056 s
+2026-10-19 13:14:17,430 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.677 s
+2026-10-19 13:14:17,613 - DEBUG -      Timing: UFun Opt: t = 0.182 s
+2026-10-19 13:14:17,613 - DEBUG -      Ufun Opt: nit=50, nfev=147, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:18,232 - DEBUG -      Timing: Hyperpara tuning t = 0.618
+2026-10-19 13:14:18,286 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:18,324 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.711 s
+2026-10-19 13:14:18,383 - DEBUG -      Comp matheron path = 0.059 s
+2026-10-19 13:14:18,420 - INFO -     Candidate:    x = ['3.94', '3.94'] with q = 5.13
+2026-10-19 13:14:18,420 - INFO -     Best:         x = ['3.94', '3.94'] with q = 5.13
+2026-10-19 13:14:18,421 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:18,421 - DEBUG -         Timing: Total EI iter 82.524 s
+
+2026-10-19 13:14:18,445 - INFO -     delta_x_abs_ma = 3.66e-02 > 0.001 --> Continue
+2026-10-19 13:14:18,445 - INFO -     delta_x_rel_ma = 6.52e-03 > 0.0001 --> Continue
+
+2026-10-19 13:14:18,445 - INFO -     delta_y_abs_ma = 3.99e-02 > 0.001 --> Continue
+2026-10-19 13:14:18,445 - INFO -     delta_y_rel_ma = 7.44e-03 > 0.0001 --> Continue
+
+2026-10-19 13:14:18,445 - INFO - EM Iteration 14:
+2026-10-19 13:14:18,445 - INFO - EM - Cuda mem:
+2026-10-19 13:14:18,446 - INFO - Allocated: 21.2 MB
+2026-10-19 13:14:18,446 - INFO - Reserved : 16888.0 MB
+2026-10-19 13:14:21,289 - DEBUG -      EI Opt: nit=20, nfev=630, message=Optimization terminated successfully.
+2026-10-19 13:14:21,342 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:14:21,471 - DEBUG -      Timing: SE Opt: t = 0.092 s
+2026-10-19 13:14:21,471 - DEBUG -      SE Opt: nit=11, nfev=78, message=Optimization terminated successfully.
+2026-10-19 13:14:22,260 - DEBUG -      Timing: Hyperpara tuning t = 0.787
+2026-10-19 13:14:22,315 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:14:22,353 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.881 s
+2026-10-19 13:14:22,534 - DEBUG -      Timing: UFun Opt: t = 0.181 s
+2026-10-19 13:14:22,534 - DEBUG -      Ufun Opt: nit=50, nfev=144, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:23,169 - DEBUG -      Timing: Hyperpara tuning t = 0.633
+2026-10-19 13:14:23,223 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:23,260 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.727 s
+2026-10-19 13:14:23,314 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:14:23,354 - INFO -     Candidate:    x = ['3.93', '3.97'] with q = 5.10
+2026-10-19 13:14:23,354 - INFO -     Best:         x = ['3.93', '3.97'] with q = 5.10
+2026-10-19 13:14:23,355 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:23,355 - DEBUG -         Timing: Total EI iter 87.457 s
+
+2026-10-19 13:14:23,380 - INFO -     delta_x_abs_ma = 2.75e-02 > 0.001 --> Continue
+2026-10-19 13:14:23,380 - INFO -     delta_x_rel_ma = 4.90e-03 > 0.0001 --> Continue
+
+2026-10-19 13:14:23,380 - INFO -     delta_y_abs_ma = 4.45e-02 > 0.001 --> Continue
+2026-10-19 13:14:23,380 - INFO -     delta_y_rel_ma = 8.29e-03 > 0.0001 --> Continue
+
+2026-10-19 13:14:23,380 - INFO - EM Iteration 15:
+2026-10-19 13:14:23,380 - INFO - EM - Cuda mem:
+2026-10-19 13:14:23,380 - INFO - Allocated: 20.8 MB
+2026-10-19 13:14:23,380 - INFO - Reserved : 17910.0 MB
+2026-10-19 13:14:26,896 - DEBUG -      EI Opt: nit=25, nfev=780, message=Optimization terminated successfully.
+2026-10-19 13:14:26,949 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:27,052 - DEBUG -      Timing: SE Opt: t = 0.065 s
+2026-10-19 13:14:27,052 - DEBUG -      SE Opt: nit=26, nfev=48, message=Optimization terminated successfully.
+2026-10-19 13:14:27,618 - DEBUG -      Timing: Hyperpara tuning t = 0.564
+2026-10-19 13:14:27,672 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:27,710 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.658 s
+2026-10-19 13:14:27,870 - DEBUG -      Timing: UFun Opt: t = 0.160 s
+2026-10-19 13:14:27,870 - DEBUG -      Ufun Opt: nit=50, nfev=126, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:28,599 - DEBUG -      Timing: Hyperpara tuning t = 0.727
+2026-10-19 13:14:28,653 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:28,691 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.821 s
+2026-10-19 13:14:28,746 - DEBUG -      Comp matheron path = 0.055 s
+2026-10-19 13:14:28,786 - INFO -     Candidate:    x = ['3.94', '3.97'] with q = 5.29
+2026-10-19 13:14:28,786 - INFO -     Best:         x = ['3.93', '3.97'] with q = 5.28
+2026-10-19 13:14:28,787 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:28,788 - DEBUG -         Timing: Total EI iter 92.890 s
+
+2026-10-19 13:14:28,817 - INFO -     delta_x_abs_ma = 2.53e-02 > 0.001 --> Continue
+2026-10-19 13:14:28,817 - INFO -     delta_x_rel_ma = 4.49e-03 > 0.0001 --> Continue
+
+2026-10-19 13:14:28,817 - INFO -     delta_y_abs_ma = 1.02e-01 > 0.001 --> Continue
+2026-10-19 13:14:28,817 - INFO -     delta_y_rel_ma = 1.90e-02 > 0.0001 --> Continue
+
+2026-10-19 13:14:28,817 - INFO - EM Iteration 16:
+2026-10-19 13:14:28,817 - INFO - EM - Cuda mem:
+2026-10-19 13:14:28,818 - INFO - Allocated: 21.2 MB
+2026-10-19 13:14:28,818 - INFO - Reserved : 18956.0 MB
+2026-10-19 13:14:34,205 - DEBUG -      EI Opt: nit=39, nfev=1200, message=Optimization terminated successfully.
+2026-10-19 13:14:34,258 - DEBUG -      Comp matheron path = 0.053 s
+2026-10-19 13:14:34,452 - DEBUG -      Timing: SE Opt: t = 0.157 s
+2026-10-19 13:14:34,452 - DEBUG -      SE Opt: nit=13, nfev=137, message=Optimization terminated successfully.
+2026-10-19 13:14:35,122 - DEBUG -      Timing: Hyperpara tuning t = 0.668
+2026-10-19 13:14:35,176 - DEBUG -      Comp matheron path = 0.054 s
+2026-10-19 13:14:35,214 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.761 s
+2026-10-19 13:14:35,377 - DEBUG -      Timing: UFun Opt: t = 0.163 s
+2026-10-19 13:14:35,377 - DEBUG -      Ufun Opt: nit=50, nfev=129, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:36,029 - DEBUG -      Timing: Hyperpara tuning t = 0.650
+2026-10-19 13:14:36,185 - DEBUG -      Comp matheron path = 0.155 s
+2026-10-19 13:14:36,227 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.850 s
+2026-10-19 13:14:36,290 - DEBUG -      Comp matheron path = 0.063 s
+2026-10-19 13:14:36,330 - INFO -     Candidate:    x = ['3.98', '3.95'] with q = 5.19
+2026-10-19 13:14:36,331 - INFO -     Best:         x = ['3.98', '3.95'] with q = 5.19
+2026-10-19 13:14:36,333 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:36,333 - DEBUG -         Timing: Total EI iter 100.435 s
+
+2026-10-19 13:14:36,357 - INFO -     delta_x_abs_ma = 2.64e-02 > 0.001 --> Continue
+2026-10-19 13:14:36,357 - INFO -     delta_x_rel_ma = 4.70e-03 > 0.0001 --> Continue
+
+2026-10-19 13:14:36,358 - INFO -     delta_y_abs_ma = 1.11e-01 > 0.001 --> Continue
+2026-10-19 13:14:36,358 - INFO -     delta_y_rel_ma = 2.07e-02 > 0.0001 --> Continue
+
+2026-10-19 13:14:36,379 - INFO - TR Iteration 1:
+2026-10-19 13:14:36,379 - INFO - TR - Cuda mem:
+2026-10-19 13:14:36,380 - INFO - Allocated: 74.7 MB
+2026-10-19 13:14:36,380 - INFO - Reserved : 1108.0 MB
+2026-10-19 13:14:42,881 - DEBUG -      Timing: TR Opt: t = 6.499 s
+2026-10-19 13:14:43,070 - DEBUG -      Timing: Gen Plot data: t = 0.189 s
+2026-10-19 13:14:43,184 - DEBUG -      Timing: SE Opt: t = 0.114 s
+2026-10-19 13:14:43,184 - DEBUG -      SE Opt: nit=14, nfev=96, message=Optimization terminated successfully.
+2026-10-19 13:14:43,850 - DEBUG -      Timing: Hyperpara tuning t = 0.664
+2026-10-19 13:14:43,871 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.687 s
+2026-10-19 13:14:44,120 - DEBUG -      Timing: UFun Opt: t = 0.249 s
+2026-10-19 13:14:44,120 - DEBUG -      Ufun Opt: nit=50, nfev=207, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:44,758 - DEBUG -      Timing: Hyperpara tuning t = 0.636
+2026-10-19 13:14:44,779 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.659 s
+2026-10-19 13:14:44,796 - INFO -     J*, J_pred, J_c: 5.224,5.197, 5.220
+2026-10-19 13:14:44,796 - INFO -     Actual improve:   ai = 0.0035829544067382812
+2026-10-19 13:14:44,796 - INFO -     Predicted improve:   spi = 0.027006149291992188
+2026-10-19 13:14:44,796 - INFO -     AI / SPI = 0.1326717988558514
+2026-10-19 13:14:44,802 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:14:44,802 - INFO -     Candidate:    x = ['3.95', '3.97'] with q = 5.22
+2026-10-19 13:14:44,802 - INFO -     Best:         x = ['3.95', '3.97'] with q = 5.22
+2026-10-19 13:14:44,803 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:44,803 - DEBUG -         Timing: Total EI iter 8.424 s
+
+2026-10-19 13:14:44,829 - INFO - TR Iteration 2:
+2026-10-19 13:14:44,829 - INFO - TR - Cuda mem:
+2026-10-19 13:14:44,829 - INFO - Allocated: 140.8 MB
+2026-10-19 13:14:44,829 - INFO - Reserved : 712.0 MB
+2026-10-19 13:14:46,950 - DEBUG -      Timing: TR Opt: t = 2.118 s
+2026-10-19 13:14:47,065 - DEBUG -      Timing: Gen Plot data: t = 0.115 s
+2026-10-19 13:14:47,228 - DEBUG -      Timing: SE Opt: t = 0.163 s
+2026-10-19 13:14:47,228 - DEBUG -      SE Opt: nit=27, nfev=136, message=Optimization terminated successfully.
+2026-10-19 13:14:48,009 - DEBUG -      Timing: Hyperpara tuning t = 0.779
+2026-10-19 13:14:48,030 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.802 s
+2026-10-19 13:14:48,170 - DEBUG -      Timing: UFun Opt: t = 0.140 s
+2026-10-19 13:14:48,171 - DEBUG -      Ufun Opt: nit=50, nfev=108, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:48,940 - DEBUG -      Timing: Hyperpara tuning t = 0.767
+2026-10-19 13:14:48,961 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.791 s
+2026-10-19 13:14:48,978 - INFO -     J*, J_pred, J_c: 5.216,5.207, 5.218
+2026-10-19 13:14:48,979 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:14:48,979 - INFO -     Predicted improve:   spi = 0.008762359619140625
+2026-10-19 13:14:48,979 - INFO -     AI / SPI = 0.0
+2026-10-19 13:14:48,979 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:14:48,979 - INFO -     Candidate:    x = ['3.98', '3.96'] with q = 5.22
+2026-10-19 13:14:48,979 - INFO -     Best:         x = ['3.95', '3.97'] with q = 5.22
+2026-10-19 13:14:48,980 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:48,980 - DEBUG -         Timing: Total EI iter 12.601 s
+
+2026-10-19 13:14:49,007 - INFO - TR Iteration 3:
+2026-10-19 13:14:49,008 - INFO - TR - Cuda mem:
+2026-10-19 13:14:49,008 - INFO - Allocated: 142.7 MB
+2026-10-19 13:14:49,008 - INFO - Reserved : 776.0 MB
+2026-10-19 13:14:51,239 - DEBUG -      Timing: TR Opt: t = 2.229 s
+2026-10-19 13:14:51,354 - DEBUG -      Timing: Gen Plot data: t = 0.114 s
+2026-10-19 13:14:51,536 - DEBUG -      Timing: SE Opt: t = 0.182 s
+2026-10-19 13:14:51,536 - DEBUG -      SE Opt: nit=46, nfev=146, message=Optimization terminated successfully.
+2026-10-19 13:14:52,318 - DEBUG -      Timing: Hyperpara tuning t = 0.780
+2026-10-19 13:14:52,340 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.804 s
+2026-10-19 13:14:52,497 - DEBUG -      Timing: UFun Opt: t = 0.156 s
+2026-10-19 13:14:52,497 - DEBUG -      Ufun Opt: nit=50, nfev=123, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:53,274 - DEBUG -      Timing: Hyperpara tuning t = 0.776
+2026-10-19 13:14:53,296 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.799 s
+2026-10-19 13:14:53,313 - INFO -     J*, J_pred, J_c: 5.205,5.187, 5.219
+2026-10-19 13:14:53,313 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:14:53,314 - INFO -     Predicted improve:   spi = 0.018205642700195312
+2026-10-19 13:14:53,314 - INFO -     AI / SPI = 0.0
+2026-10-19 13:14:53,314 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:14:53,314 - INFO -     Candidate:    x = ['3.97', '3.97'] with q = 5.22
+2026-10-19 13:14:53,314 - INFO -     Best:         x = ['3.95', '3.97'] with q = 5.20
+2026-10-19 13:14:53,315 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:53,315 - DEBUG -         Timing: Total EI iter 16.936 s
+
+2026-10-19 13:14:53,342 - INFO - TR Iteration 4:
+2026-10-19 13:14:53,343 - INFO - TR - Cuda mem:
+2026-10-19 13:14:53,343 - INFO - Allocated: 144.4 MB
+2026-10-19 13:14:53,343 - INFO - Reserved : 1164.0 MB
+2026-10-19 13:14:55,943 - DEBUG -      Timing: TR Opt: t = 2.598 s
+2026-10-19 13:14:56,070 - DEBUG -      Timing: Gen Plot data: t = 0.127 s
+2026-10-19 13:14:56,155 - DEBUG -      Timing: SE Opt: t = 0.085 s
+2026-10-19 13:14:56,155 - DEBUG -      SE Opt: nit=24, nfev=64, message=Optimization terminated successfully.
+2026-10-19 13:14:56,881 - DEBUG -      Timing: Hyperpara tuning t = 0.724
+2026-10-19 13:14:56,903 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.748 s
+2026-10-19 13:14:57,053 - DEBUG -      Timing: UFun Opt: t = 0.151 s
+2026-10-19 13:14:57,053 - DEBUG -      Ufun Opt: nit=50, nfev=117, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:14:57,806 - DEBUG -      Timing: Hyperpara tuning t = 0.751
+2026-10-19 13:14:57,828 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.774 s
+2026-10-19 13:14:57,845 - INFO -     J*, J_pred, J_c: 5.215,5.210, 5.212
+2026-10-19 13:14:57,845 - INFO -     Actual improve:   ai = 0.00283050537109375
+2026-10-19 13:14:57,845 - INFO -     Predicted improve:   spi = 0.004954338073730469
+2026-10-19 13:14:57,845 - INFO -     AI / SPI = 0.5713185755534167
+2026-10-19 13:14:57,845 - INFO -     Keep TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:14:57,845 - INFO -     Candidate:    x = ['3.95', '3.95'] with q = 5.21
+2026-10-19 13:14:57,845 - INFO -     Best:         x = ['3.95', '3.95'] with q = 5.21
+2026-10-19 13:14:57,847 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:14:57,847 - DEBUG -         Timing: Total EI iter 21.467 s
+
+2026-10-19 13:14:57,871 - INFO -     delta_x_abs_ma = 2.13e-02 > 0.001 --> Continue
+2026-10-19 13:14:57,871 - INFO -     delta_x_rel_ma = 3.79e-03 > 0.0001 --> Continue
+
+2026-10-19 13:14:57,872 - INFO -     delta_y_abs_ma = 3.33e-03 > 0.001 --> Continue
+2026-10-19 13:14:57,872 - INFO -     delta_y_rel_ma = 6.38e-04 > 0.0001 --> Continue
+
+2026-10-19 13:14:57,872 - INFO - TR Iteration 5:
+2026-10-19 13:14:57,872 - INFO - TR - Cuda mem:
+2026-10-19 13:14:57,872 - INFO - Allocated: 146.4 MB
+2026-10-19 13:14:57,872 - INFO - Reserved : 776.0 MB
+2026-10-19 13:14:59,677 - DEBUG -      Timing: TR Opt: t = 1.803 s
+2026-10-19 13:14:59,796 - DEBUG -      Timing: Gen Plot data: t = 0.119 s
+2026-10-19 13:14:59,855 - DEBUG -      Timing: SE Opt: t = 0.058 s
+2026-10-19 13:14:59,855 - DEBUG -      SE Opt: nit=30, nfev=37, message=Optimization terminated successfully.
+2026-10-19 13:15:00,500 - DEBUG -      Timing: Hyperpara tuning t = 0.643
+2026-10-19 13:15:00,522 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.668 s
+2026-10-19 13:15:00,683 - DEBUG -      Timing: UFun Opt: t = 0.161 s
+2026-10-19 13:15:00,683 - DEBUG -      Ufun Opt: nit=50, nfev=126, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:01,384 - DEBUG -      Timing: Hyperpara tuning t = 0.699
+2026-10-19 13:15:01,406 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.723 s
+2026-10-19 13:15:01,423 - INFO -     J*, J_pred, J_c: 5.207,5.213, 5.228
+2026-10-19 13:15:01,423 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:15:01,423 - INFO -     Predicted improve:   spi = -0.006361961364746094
+2026-10-19 13:15:01,423 - INFO -     AI / SPI = -0.0
+2026-10-19 13:15:01,424 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:01,424 - INFO -     Candidate:    x = ['3.96', '3.99'] with q = 5.23
+2026-10-19 13:15:01,424 - INFO -     Best:         x = ['3.95', '3.95'] with q = 5.21
+2026-10-19 13:15:01,426 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:01,426 - DEBUG -         Timing: Total EI iter 25.047 s
+
+2026-10-19 13:15:01,456 - INFO -     delta_x_abs_ma = 2.67e-02 > 0.001 --> Continue
+2026-10-19 13:15:01,456 - INFO -     delta_x_rel_ma = 4.75e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:01,456 - INFO -     delta_y_abs_ma = 7.91e-03 > 0.001 --> Continue
+2026-10-19 13:15:01,456 - INFO -     delta_y_rel_ma = 1.51e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:01,456 - INFO - TR Iteration 6:
+2026-10-19 13:15:01,456 - INFO - TR - Cuda mem:
+2026-10-19 13:15:01,457 - INFO - Allocated: 147.9 MB
+2026-10-19 13:15:01,457 - INFO - Reserved : 726.0 MB
+2026-10-19 13:15:03,542 - DEBUG -      Timing: TR Opt: t = 2.084 s
+2026-10-19 13:15:03,661 - DEBUG -      Timing: Gen Plot data: t = 0.119 s
+2026-10-19 13:15:03,738 - DEBUG -      Timing: SE Opt: t = 0.077 s
+2026-10-19 13:15:03,738 - DEBUG -      SE Opt: nit=23, nfev=57, message=Optimization terminated successfully.
+2026-10-19 13:15:04,481 - DEBUG -      Timing: Hyperpara tuning t = 0.741
+2026-10-19 13:15:04,503 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.765 s
+2026-10-19 13:15:04,766 - DEBUG -      Timing: UFun Opt: t = 0.263 s
+2026-10-19 13:15:04,766 - DEBUG -      Ufun Opt: nit=50, nfev=219, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:05,464 - DEBUG -      Timing: Hyperpara tuning t = 0.696
+2026-10-19 13:15:05,486 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.720 s
+2026-10-19 13:15:05,504 - INFO -     J*, J_pred, J_c: 5.221,5.201, 5.207
+2026-10-19 13:15:05,504 - INFO -     Actual improve:   ai = 0.013879776000976562
+2026-10-19 13:15:05,504 - INFO -     Predicted improve:   spi = 0.020282745361328125
+2026-10-19 13:15:05,504 - INFO -     AI / SPI = 0.6843144630430694
+2026-10-19 13:15:05,505 - INFO -     Keep TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:05,505 - INFO -     Candidate:    x = ['3.95', '3.95'] with q = 5.21
+2026-10-19 13:15:05,505 - INFO -     Best:         x = ['3.95', '3.95'] with q = 5.21
+2026-10-19 13:15:05,506 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:05,506 - DEBUG -         Timing: Total EI iter 29.127 s
+
+2026-10-19 13:15:05,532 - INFO -     delta_x_abs_ma = 3.80e-02 > 0.001 --> Continue
+2026-10-19 13:15:05,533 - INFO -     delta_x_rel_ma = 6.76e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:05,533 - INFO -     delta_y_abs_ma = 1.43e-02 > 0.001 --> Continue
+2026-10-19 13:15:05,533 - INFO -     delta_y_rel_ma = 2.74e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:05,533 - INFO - TR Iteration 7:
+2026-10-19 13:15:05,533 - INFO - TR - Cuda mem:
+2026-10-19 13:15:05,533 - INFO - Allocated: 148.8 MB
+2026-10-19 13:15:05,533 - INFO - Reserved : 796.0 MB
+2026-10-19 13:15:07,631 - DEBUG -      Timing: TR Opt: t = 2.096 s
+2026-10-19 13:15:07,749 - DEBUG -      Timing: Gen Plot data: t = 0.117 s
+2026-10-19 13:15:07,848 - DEBUG -      Timing: SE Opt: t = 0.099 s
+2026-10-19 13:15:07,848 - DEBUG -      SE Opt: nit=23, nfev=78, message=Optimization terminated successfully.
+2026-10-19 13:15:08,581 - DEBUG -      Timing: Hyperpara tuning t = 0.731
+2026-10-19 13:15:08,603 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.755 s
+2026-10-19 13:15:08,757 - DEBUG -      Timing: UFun Opt: t = 0.154 s
+2026-10-19 13:15:08,757 - DEBUG -      Ufun Opt: nit=50, nfev=120, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:09,573 - DEBUG -      Timing: Hyperpara tuning t = 0.814
+2026-10-19 13:15:09,595 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.838 s
+2026-10-19 13:15:09,613 - INFO -     J*, J_pred, J_c: 5.233,5.198, 5.221
+2026-10-19 13:15:09,613 - INFO -     Actual improve:   ai = 0.011943817138671875
+2026-10-19 13:15:09,613 - INFO -     Predicted improve:   spi = 0.035465240478515625
+2026-10-19 13:15:09,613 - INFO -     AI / SPI = 0.3367753038614607
+2026-10-19 13:15:09,613 - INFO -     Keep TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:09,613 - INFO -     Candidate:    x = ['3.97', '3.97'] with q = 5.22
+2026-10-19 13:15:09,613 - INFO -     Best:         x = ['3.97', '3.97'] with q = 5.22
+2026-10-19 13:15:09,614 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:09,615 - DEBUG -         Timing: Total EI iter 33.235 s
+
+2026-10-19 13:15:09,641 - INFO -     delta_x_abs_ma = 3.76e-02 > 0.001 --> Continue
+2026-10-19 13:15:09,641 - INFO -     delta_x_rel_ma = 6.69e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:09,641 - INFO -     delta_y_abs_ma = 1.65e-02 > 0.001 --> Continue
+2026-10-19 13:15:09,641 - INFO -     delta_y_rel_ma = 3.15e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:09,642 - INFO - TR Iteration 8:
+2026-10-19 13:15:09,642 - INFO - TR - Cuda mem:
+2026-10-19 13:15:09,642 - INFO - Allocated: 151.0 MB
+2026-10-19 13:15:09,642 - INFO - Reserved : 798.0 MB
+2026-10-19 13:15:11,453 - DEBUG -      Timing: TR Opt: t = 1.808 s
+2026-10-19 13:15:11,571 - DEBUG -      Timing: Gen Plot data: t = 0.118 s
+2026-10-19 13:15:11,692 - DEBUG -      Timing: SE Opt: t = 0.121 s
+2026-10-19 13:15:11,692 - DEBUG -      SE Opt: nit=10, nfev=104, message=Optimization terminated successfully.
+2026-10-19 13:15:12,460 - DEBUG -      Timing: Hyperpara tuning t = 0.766
+2026-10-19 13:15:12,483 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.791 s
+2026-10-19 13:15:12,675 - DEBUG -      Timing: UFun Opt: t = 0.192 s
+2026-10-19 13:15:12,675 - DEBUG -      Ufun Opt: nit=50, nfev=156, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:13,377 - DEBUG -      Timing: Hyperpara tuning t = 0.700
+2026-10-19 13:15:13,399 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.724 s
+2026-10-19 13:15:13,417 - INFO -     J*, J_pred, J_c: 5.212,5.208, 5.230
+2026-10-19 13:15:13,417 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:15:13,417 - INFO -     Predicted improve:   spi = 0.004054069519042969
+2026-10-19 13:15:13,417 - INFO -     AI / SPI = 0.0
+2026-10-19 13:15:13,417 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:13,418 - INFO -     Candidate:    x = ['3.95', '3.97'] with q = 5.23
+2026-10-19 13:15:13,418 - INFO -     Best:         x = ['3.97', '3.97'] with q = 5.21
+2026-10-19 13:15:13,419 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:13,419 - DEBUG -         Timing: Total EI iter 37.039 s
+
+2026-10-19 13:15:13,446 - INFO -     delta_x_abs_ma = 2.96e-02 > 0.001 --> Continue
+2026-10-19 13:15:13,446 - INFO -     delta_x_rel_ma = 5.27e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:13,446 - INFO -     delta_y_abs_ma = 1.42e-02 > 0.001 --> Continue
+2026-10-19 13:15:13,446 - INFO -     delta_y_rel_ma = 2.71e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:13,446 - INFO - TR Iteration 9:
+2026-10-19 13:15:13,446 - INFO - TR - Cuda mem:
+2026-10-19 13:15:13,447 - INFO - Allocated: 152.6 MB
+2026-10-19 13:15:13,447 - INFO - Reserved : 1254.0 MB
+2026-10-19 13:15:15,520 - DEBUG -      Timing: TR Opt: t = 2.071 s
+2026-10-19 13:15:15,646 - DEBUG -      Timing: Gen Plot data: t = 0.126 s
+2026-10-19 13:15:15,723 - DEBUG -      Timing: SE Opt: t = 0.076 s
+2026-10-19 13:15:15,723 - DEBUG -      SE Opt: nit=25, nfev=56, message=Optimization terminated successfully.
+2026-10-19 13:15:16,570 - DEBUG -      Timing: Hyperpara tuning t = 0.845
+2026-10-19 13:15:16,593 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.870 s
+2026-10-19 13:15:16,840 - DEBUG -      Timing: UFun Opt: t = 0.247 s
+2026-10-19 13:15:16,840 - DEBUG -      Ufun Opt: nit=50, nfev=204, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:17,586 - DEBUG -      Timing: Hyperpara tuning t = 0.743
+2026-10-19 13:15:17,608 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.767 s
+2026-10-19 13:15:17,626 - INFO -     J*, J_pred, J_c: 5.204,5.210, 5.212
+2026-10-19 13:15:17,626 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:15:17,626 - INFO -     Predicted improve:   spi = -0.006134510040283203
+2026-10-19 13:15:17,626 - INFO -     AI / SPI = -0.0
+2026-10-19 13:15:17,626 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:17,626 - INFO -     Candidate:    x = ['3.98', '3.97'] with q = 5.21
+2026-10-19 13:15:17,627 - INFO -     Best:         x = ['3.97', '3.97'] with q = 5.20
+2026-10-19 13:15:17,629 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:17,629 - DEBUG -         Timing: Total EI iter 41.249 s
+
+2026-10-19 13:15:17,656 - INFO -     delta_x_abs_ma = 2.63e-02 > 0.001 --> Continue
+2026-10-19 13:15:17,656 - INFO -     delta_x_rel_ma = 4.69e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:17,656 - INFO -     delta_y_abs_ma = 1.33e-02 > 0.001 --> Continue
+2026-10-19 13:15:17,656 - INFO -     delta_y_rel_ma = 2.55e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:17,656 - INFO - TR Iteration 10:
+2026-10-19 13:15:17,656 - INFO - TR - Cuda mem:
+2026-10-19 13:15:17,656 - INFO - Allocated: 153.4 MB
+2026-10-19 13:15:17,656 - INFO - Reserved : 818.0 MB
+2026-10-19 13:15:19,846 - DEBUG -      Timing: TR Opt: t = 2.187 s
+2026-10-19 13:15:19,989 - DEBUG -      Timing: Gen Plot data: t = 0.143 s
+2026-10-19 13:15:20,089 - DEBUG -      Timing: SE Opt: t = 0.099 s
+2026-10-19 13:15:20,089 - DEBUG -      SE Opt: nit=27, nfev=76, message=Optimization terminated successfully.
+2026-10-19 13:15:20,866 - DEBUG -      Timing: Hyperpara tuning t = 0.775
+2026-10-19 13:15:20,889 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.800 s
+2026-10-19 13:15:21,046 - DEBUG -      Timing: UFun Opt: t = 0.157 s
+2026-10-19 13:15:21,046 - DEBUG -      Ufun Opt: nit=50, nfev=123, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:21,765 - DEBUG -      Timing: Hyperpara tuning t = 0.717
+2026-10-19 13:15:21,787 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.741 s
+2026-10-19 13:15:21,805 - INFO -     J*, J_pred, J_c: 5.207,5.204, 5.251
+2026-10-19 13:15:21,806 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:15:21,806 - INFO -     Predicted improve:   spi = 0.0029773712158203125
+2026-10-19 13:15:21,806 - INFO -     AI / SPI = 0.0
+2026-10-19 13:15:21,806 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:21,806 - INFO -     Candidate:    x = ['3.95', '3.93'] with q = 5.25
+2026-10-19 13:15:21,806 - INFO -     Best:         x = ['3.97', '3.97'] with q = 5.21
+2026-10-19 13:15:21,807 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:21,807 - DEBUG -         Timing: Total EI iter 45.428 s
+
+2026-10-19 13:15:21,836 - INFO -     delta_x_abs_ma = 3.34e-02 > 0.001 --> Continue
+2026-10-19 13:15:21,836 - INFO -     delta_x_rel_ma = 5.94e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:21,836 - INFO -     delta_y_abs_ma = 2.17e-02 > 0.001 --> Continue
+2026-10-19 13:15:21,836 - INFO -     delta_y_rel_ma = 4.12e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:21,836 - INFO - TR Iteration 11:
+2026-10-19 13:15:21,836 - INFO - TR - Cuda mem:
+2026-10-19 13:15:21,836 - INFO - Allocated: 155.0 MB
+2026-10-19 13:15:21,836 - INFO - Reserved : 768.0 MB
+2026-10-19 13:15:23,935 - DEBUG -      Timing: TR Opt: t = 2.097 s
+2026-10-19 13:15:24,073 - DEBUG -      Timing: Gen Plot data: t = 0.137 s
+2026-10-19 13:15:24,169 - DEBUG -      Timing: SE Opt: t = 0.096 s
+2026-10-19 13:15:24,170 - DEBUG -      SE Opt: nit=23, nfev=75, message=Optimization terminated successfully.
+2026-10-19 13:15:25,015 - DEBUG -      Timing: Hyperpara tuning t = 0.843
+2026-10-19 13:15:25,038 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.868 s
+2026-10-19 13:15:25,186 - DEBUG -      Timing: UFun Opt: t = 0.149 s
+2026-10-19 13:15:25,186 - DEBUG -      Ufun Opt: nit=50, nfev=114, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:26,015 - DEBUG -      Timing: Hyperpara tuning t = 0.827
+2026-10-19 13:15:26,038 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.852 s
+2026-10-19 13:15:26,057 - INFO -     J*, J_pred, J_c: 5.202,5.201, 5.199
+2026-10-19 13:15:26,057 - INFO -     Actual improve:   ai = 0.0025568008422851562
+2026-10-19 13:15:26,057 - INFO -     Predicted improve:   spi = 0.0004930496215820312
+2026-10-19 13:15:26,057 - INFO -     AI / SPI = 5.18568665377176
+2026-10-19 13:15:26,057 - INFO -     Increase TR: New delta = tensor([0.0282, 0.0282])
+2026-10-19 13:15:26,057 - INFO -     Candidate:    x = ['3.94', '3.97'] with q = 5.20
+2026-10-19 13:15:26,057 - INFO -     Best:         x = ['3.94', '3.97'] with q = 5.20
+2026-10-19 13:15:26,059 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:26,059 - DEBUG -         Timing: Total EI iter 49.680 s
+
+2026-10-19 13:15:26,088 - INFO -     delta_x_abs_ma = 3.99e-02 > 0.001 --> Continue
+2026-10-19 13:15:26,088 - INFO -     delta_x_rel_ma = 7.10e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:26,088 - INFO -     delta_y_abs_ma = 3.60e-02 > 0.001 --> Continue
+2026-10-19 13:15:26,088 - INFO -     delta_y_rel_ma = 6.86e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:26,089 - INFO - TR Iteration 12:
+2026-10-19 13:15:26,089 - INFO - TR - Cuda mem:
+2026-10-19 13:15:26,089 - INFO - Allocated: 156.9 MB
+2026-10-19 13:15:26,089 - INFO - Reserved : 840.0 MB
+2026-10-19 13:15:28,307 - DEBUG -      Timing: TR Opt: t = 2.215 s
+2026-10-19 13:15:28,423 - DEBUG -      Timing: Gen Plot data: t = 0.116 s
+2026-10-19 13:15:28,561 - DEBUG -      Timing: SE Opt: t = 0.137 s
+2026-10-19 13:15:28,561 - DEBUG -      SE Opt: nit=10, nfev=119, message=Optimization terminated successfully.
+2026-10-19 13:15:29,383 - DEBUG -      Timing: Hyperpara tuning t = 0.821
+2026-10-19 13:15:29,407 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.846 s
+2026-10-19 13:15:29,556 - DEBUG -      Timing: UFun Opt: t = 0.149 s
+2026-10-19 13:15:29,556 - DEBUG -      Ufun Opt: nit=50, nfev=114, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:30,307 - DEBUG -      Timing: Hyperpara tuning t = 0.749
+2026-10-19 13:15:30,329 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.773 s
+2026-10-19 13:15:30,347 - INFO -     J*, J_pred, J_c: 5.220,5.197, 5.209
+2026-10-19 13:15:30,347 - INFO -     Actual improve:   ai = 0.011006832122802734
+2026-10-19 13:15:30,347 - INFO -     Predicted improve:   spi = 0.023666858673095703
+2026-10-19 13:15:30,347 - INFO -     AI / SPI = 0.4650736405214273
+2026-10-19 13:15:30,348 - INFO -     Keep TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:30,348 - INFO -     Candidate:    x = ['3.97', '3.97'] with q = 5.21
+2026-10-19 13:15:30,348 - INFO -     Best:         x = ['3.97', '3.97'] with q = 5.21
+2026-10-19 13:15:30,349 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:30,349 - DEBUG -         Timing: Total EI iter 53.970 s
+
+2026-10-19 13:15:30,378 - INFO -     delta_x_abs_ma = 3.61e-02 > 0.001 --> Continue
+2026-10-19 13:15:30,378 - INFO -     delta_x_rel_ma = 6.43e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:30,378 - INFO -     delta_y_abs_ma = 3.36e-02 > 0.001 --> Continue
+2026-10-19 13:15:30,378 - INFO -     delta_y_rel_ma = 6.39e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:30,378 - INFO - TR Iteration 13:
+2026-10-19 13:15:30,378 - INFO - TR - Cuda mem:
+2026-10-19 13:15:30,378 - INFO - Allocated: 159.1 MB
+2026-10-19 13:15:30,378 - INFO - Reserved : 842.0 MB
+2026-10-19 13:15:32,765 - DEBUG -      Timing: TR Opt: t = 2.384 s
+2026-10-19 13:15:32,888 - DEBUG -      Timing: Gen Plot data: t = 0.123 s
+2026-10-19 13:15:32,947 - DEBUG -      Timing: SE Opt: t = 0.058 s
+2026-10-19 13:15:32,947 - DEBUG -      SE Opt: nit=12, nfev=46, message=Optimization terminated successfully.
+2026-10-19 13:15:33,663 - DEBUG -      Timing: Hyperpara tuning t = 0.714
+2026-10-19 13:15:33,687 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.740 s
+2026-10-19 13:15:33,858 - DEBUG -      Timing: UFun Opt: t = 0.171 s
+2026-10-19 13:15:33,858 - DEBUG -      Ufun Opt: nit=50, nfev=135, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:34,591 - DEBUG -      Timing: Hyperpara tuning t = 0.731
+2026-10-19 13:15:34,615 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.757 s
+2026-10-19 13:15:34,635 - INFO -     J*, J_pred, J_c: 5.202,5.206, 5.223
+2026-10-19 13:15:34,635 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:15:34,635 - INFO -     Predicted improve:   spi = -0.0034999847412109375
+2026-10-19 13:15:34,635 - INFO -     AI / SPI = -0.0
+2026-10-19 13:15:34,635 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:34,636 - INFO -     Candidate:    x = ['3.98', '3.96'] with q = 5.22
+2026-10-19 13:15:34,636 - INFO -     Best:         x = ['3.97', '3.97'] with q = 5.20
+2026-10-19 13:15:34,637 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:34,637 - DEBUG -         Timing: Total EI iter 58.257 s
+
+2026-10-19 13:15:34,665 - INFO -     delta_x_abs_ma = 2.69e-02 > 0.001 --> Continue
+2026-10-19 13:15:34,665 - INFO -     delta_x_rel_ma = 4.78e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:34,665 - INFO -     delta_y_abs_ma = 2.53e-02 > 0.001 --> Continue
+2026-10-19 13:15:34,665 - INFO -     delta_y_rel_ma = 4.81e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:34,665 - INFO - TR Iteration 14:
+2026-10-19 13:15:34,665 - INFO - TR - Cuda mem:
+2026-10-19 13:15:34,665 - INFO - Allocated: 160.2 MB
+2026-10-19 13:15:34,665 - INFO - Reserved : 1322.0 MB
+2026-10-19 13:15:37,869 - DEBUG -      Timing: TR Opt: t = 3.202 s
+2026-10-19 13:15:37,997 - DEBUG -      Timing: Gen Plot data: t = 0.128 s
+2026-10-19 13:15:38,075 - DEBUG -      Timing: SE Opt: t = 0.078 s
+2026-10-19 13:15:38,075 - DEBUG -      SE Opt: nit=13, nfev=62, message=Optimization terminated successfully.
+2026-10-19 13:15:38,763 - DEBUG -      Timing: Hyperpara tuning t = 0.685
+2026-10-19 13:15:38,787 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.712 s
+2026-10-19 13:15:38,959 - DEBUG -      Timing: UFun Opt: t = 0.172 s
+2026-10-19 13:15:38,959 - DEBUG -      Ufun Opt: nit=50, nfev=132, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:39,694 - DEBUG -      Timing: Hyperpara tuning t = 0.733
+2026-10-19 13:15:39,719 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.760 s
+2026-10-19 13:15:39,739 - INFO -     J*, J_pred, J_c: 5.209,5.200, 5.231
+2026-10-19 13:15:39,739 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:15:39,739 - INFO -     Predicted improve:   spi = 0.008482933044433594
+2026-10-19 13:15:39,739 - INFO -     AI / SPI = 0.0
+2026-10-19 13:15:39,739 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:39,740 - INFO -     Candidate:    x = ['3.98', '3.96'] with q = 5.23
+2026-10-19 13:15:39,740 - INFO -     Best:         x = ['3.97', '3.97'] with q = 5.21
+2026-10-19 13:15:39,741 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:39,741 - DEBUG -         Timing: Total EI iter 63.361 s
+
+2026-10-19 13:15:39,768 - INFO -     delta_x_abs_ma = 1.56e-02 > 0.001 --> Continue
+2026-10-19 13:15:39,768 - INFO -     delta_x_rel_ma = 2.78e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:39,769 - INFO -     delta_y_abs_ma = 1.05e-02 > 0.001 --> Continue
+2026-10-19 13:15:39,769 - INFO -     delta_y_rel_ma = 2.00e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:39,769 - INFO - TR Iteration 15:
+2026-10-19 13:15:39,769 - INFO - TR - Cuda mem:
+2026-10-19 13:15:39,769 - INFO - Allocated: 161.3 MB
+2026-10-19 13:15:39,769 - INFO - Reserved : 864.0 MB
+2026-10-19 13:15:42,757 - DEBUG -      Timing: TR Opt: t = 2.986 s
+2026-10-19 13:15:42,874 - DEBUG -      Timing: Gen Plot data: t = 0.117 s
+2026-10-19 13:15:42,986 - DEBUG -      Timing: SE Opt: t = 0.111 s
+2026-10-19 13:15:42,986 - DEBUG -      SE Opt: nit=22, nfev=89, message=Optimization terminated successfully.
+2026-10-19 13:15:43,729 - DEBUG -      Timing: Hyperpara tuning t = 0.742
+2026-10-19 13:15:43,754 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.769 s
+2026-10-19 13:15:43,909 - DEBUG -      Timing: UFun Opt: t = 0.155 s
+2026-10-19 13:15:43,909 - DEBUG -      Ufun Opt: nit=50, nfev=120, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:44,747 - DEBUG -      Timing: Hyperpara tuning t = 0.836
+2026-10-19 13:15:44,771 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.862 s
+2026-10-19 13:15:44,791 - INFO -     J*, J_pred, J_c: 5.204,5.201, 5.236
+2026-10-19 13:15:44,791 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:15:44,791 - INFO -     Predicted improve:   spi = 0.00322723388671875
+2026-10-19 13:15:44,791 - INFO -     AI / SPI = 0.0
+2026-10-19 13:15:44,792 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:44,792 - INFO -     Candidate:    x = ['3.99', '3.98'] with q = 5.24
+2026-10-19 13:15:44,792 - INFO -     Best:         x = ['3.97', '3.97'] with q = 5.20
+2026-10-19 13:15:44,793 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:44,793 - DEBUG -         Timing: Total EI iter 68.414 s
+
+2026-10-19 13:15:44,820 - INFO -     delta_x_abs_ma = 1.54e-02 > 0.001 --> Continue
+2026-10-19 13:15:44,820 - INFO -     delta_x_rel_ma = 2.74e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:44,821 - INFO -     delta_y_abs_ma = 8.81e-03 > 0.001 --> Continue
+2026-10-19 13:15:44,821 - INFO -     delta_y_rel_ma = 1.68e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:44,821 - INFO - TR Iteration 16:
+2026-10-19 13:15:44,821 - INFO - TR - Cuda mem:
+2026-10-19 13:15:44,821 - INFO - Allocated: 163.5 MB
+2026-10-19 13:15:44,821 - INFO - Reserved : 864.0 MB
+2026-10-19 13:15:47,366 - DEBUG -      Timing: TR Opt: t = 2.543 s
+2026-10-19 13:15:47,485 - DEBUG -      Timing: Gen Plot data: t = 0.119 s
+2026-10-19 13:15:47,575 - DEBUG -      Timing: SE Opt: t = 0.090 s
+2026-10-19 13:15:47,575 - DEBUG -      SE Opt: nit=8, nfev=75, message=Optimization terminated successfully.
+2026-10-19 13:15:48,336 - DEBUG -      Timing: Hyperpara tuning t = 0.759
+2026-10-19 13:15:48,362 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.786 s
+2026-10-19 13:15:48,560 - DEBUG -      Timing: UFun Opt: t = 0.198 s
+2026-10-19 13:15:48,560 - DEBUG -      Ufun Opt: nit=50, nfev=156, message=Maximum number of iterations has been exceeded.
+2026-10-19 13:15:49,373 - DEBUG -      Timing: Hyperpara tuning t = 0.811
+2026-10-19 13:15:49,398 - DEBUG -      Timing: Observe, Retrain GP, Reevaluate: t = 0.838 s
+2026-10-19 13:15:49,418 - INFO -     J*, J_pred, J_c: 5.218,5.204, 5.235
+2026-10-19 13:15:49,418 - INFO -     Actual improve:   ai = 0.0
+2026-10-19 13:15:49,418 - INFO -     Predicted improve:   spi = 0.014361858367919922
+2026-10-19 13:15:49,418 - INFO -     AI / SPI = 0.0
+2026-10-19 13:15:49,419 - INFO -     Shrink TR: New delta = tensor([0.0849, 0.0849])
+2026-10-19 13:15:49,419 - INFO -     Candidate:    x = ['4.00', '3.97'] with q = 5.23
+2026-10-19 13:15:49,419 - INFO -     Best:         x = ['3.97', '3.97'] with q = 5.22
+2026-10-19 13:15:49,421 - INFO -     Optimum:      x = ['3.97', '3.97'] with q = 5.20 
+
+2026-10-19 13:15:49,421 - DEBUG -         Timing: Total EI iter 73.041 s
+
+2026-10-19 13:15:49,449 - INFO -     delta_x_abs_ma = 1.37e-02 > 0.001 --> Continue
+2026-10-19 13:15:49,449 - INFO -     delta_x_rel_ma = 2.43e-03 > 0.0001 --> Continue
+
+2026-10-19 13:15:49,449 - INFO -     delta_y_abs_ma = 4.66e-03 > 0.001 --> Continue
+2026-10-19 13:15:49,449 - INFO -     delta_y_rel_ma = 8.87e-04 > 0.0001 --> Continue
+

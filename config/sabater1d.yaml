@@ -1,0 +1,82 @@
+# config.yaml
+
+# RO doe
+n_doe: 10
+n_doe_se: -1
+n_doe_ufun: -1
+n_EI: 10
+n_EX: 0
+n_EI_se: -1
+n_EI_ufun: -1
+n_EM: 5
+n_EM_se: -1
+n_EM_ufun: -1
+n_TR: 5
+n_TR_se: -1
+n_TR_ufun: -1
+
+# Convergence
+conv_EI: '{"switch": 0, "eps": 0.05, "n_ave": 2}'
+conv_x : '{"switch": 0, "abs_x": 1e-3, "rel_x": 1e-4, "n_ave": 3}'
+conv_y : '{"switch": 0, "abs_y": 1e-3, "rel_y": 1e-4, "n_ave": 3}'
+
+# Load precomputed
+sim_file: "_temp/2026-05-11/16_58_07_Sabater1d_ndoe_-1_n_EI_-1/ro_data.pkl"
+load_doe: 0
+continue_doe: 0
+load_doe_infill: 0
+catch_up_doe_infill: 0
+continue_doe_infill: 0
+load_EI: 0
+continue_EI: 0
+load_EM: 0
+continue_EM: 0
+load_TR: 0
+continue_TR: 0
+
+# optimizer:
+EI_genopt_i: 50
+EI_genopt_pop: 10
+EM_genopt_i: 50
+EM_genopt_pop: 10
+TR_genopt_i: 30
+TR_genopt_pop: 10
+UQ_genopt_i: 50
+UQ_genopt_pop: 10
+
+# GP optimizer
+max_attempts: 5
+
+# quantile_sampling:
+measure: "quantile"       # "quantile" or "mean_std"
+tau: 0.95                 # Only active if meassure is ["quant"]
+alpha: 0.5                # Only active if meassure is ["mean_std"] 
+sampler: "matheron"       # "matheron" or "classical"
+J_device: "cuda"
+n_samp_gp: 5000
+n_samp_J: 5000
+n_samp_gp_opt: 500
+n_samp_J_opt: 500
+n_samp_J_TR_opt: 100000  # This is 1e5 expressed as an integer
+n_rep_J_TR: 2
+plot_n_samp_J: 1000
+plot_n_samp_gp: 1000
+
+# general:
+doe_burn_in: 0
+ref_stat: "quant"       # which statistic to use for the current optimum.
+ref_q: 0.75             # reference quantile value 
+EI_type: analytical     # How to compute the EI 
+seed: 45
+output_folder: null
+tag: "ro"
+verbose: False
+log_level: 1
+
+# model:
+model: "Sabater1d"
+model_kwargs: '{"design_uq": false}'
+add_noise: 0.0001  # 1e-4 expressed as a float
+plot_flag: true
+plot_n_points: 40
+plot_n_rep: 1
