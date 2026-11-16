@@ -92,6 +92,8 @@ PATH/TO/PYTHON run/mono_level_ro.py --config config/sabater1d.yaml --plot_flag  
 PATH/TO/PYTHON run/mono_level_ro.py --config config/sabater2d.yaml --plot_flag   # Saves additional data for plotting
 ```
 
+If the acquisition function optimization is very time consuming, consider to reduce the sample sizes defined by the kwargs 'n_samp_gp_opt' and 'n_samp_J_opt'.
+
 ### Visualize the results
 When running the computation with '--plot_flag' command args additional data for plotting is saved.
 
